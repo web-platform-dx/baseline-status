@@ -1,0 +1,34 @@
+{
+  "name": "baseline-status",
+  "version": "1.0.0",
+  "description": "A widget displaying Baseline status of a web feature",
+  "main": "baseline-status.js",
+  "type": "module",
+  "scripts": {
+    "serve": "rollup -c && wds --watch",
+    "test": "wtr test/**/*.test.js --node-resolve",
+    "test:update": "wtr test/**/*.test.js --node-resolve --update-snapshots"
+  },
+  "author": "ewag@google.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@lit/task": "^1.0.0",
+    "lit": "^3.1.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@open-wc/semantic-dom-diff": "^0.20.1",
+    "@open-wc/testing": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@web/dev-server": "^0.4.4",
+    "@web/rollup-plugin-html": "^2.3.0",
+    "@web/test-runner": "^0.18.2",
+    "eslint": "^9.3.0",
+    "eslint-plugin-mocha": "^10.4.3",
+    "globals": "^15.3.0",
+    "rollup": "^3.0.0",
+    "rollup-plugin-html-literals": "^1.1.8",
+    "rollup-plugin-summary": "^2.0.0"
+  }
+}
