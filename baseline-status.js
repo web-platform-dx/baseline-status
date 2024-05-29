@@ -276,9 +276,6 @@ export class BaselineStatus extends LitElement {
       </p>
       <p>
         <a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.id}.yml">Learn more</a>
-        ${feature?.caniuse ?
-          html`<a href="https://caniuse.com/${feature.caniuse}">See full compatibility</a>` :
-          ''}
       </p>
     </details>`;
   }
