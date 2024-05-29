@@ -234,11 +234,11 @@ export class BaselineStatus extends LitElement {
     if (baseline === 'newly') {
       prefix = 'This ';
       badge = html`<span class="baseline-badge">newly available</span>`
-      if (feature.baseline.newly_date) {
+      if (feature.baseline.low_date) {
         const date = new Intl.DateTimeFormat('en-GB', {
           year: 'numeric',
           month: 'long'
-        }).format(new Date(feature.baseline.newly_date));
+        }).format(new Date(feature.baseline.low_date));
         prefix = `Since ${date} t`;
         year = date.split(' ')[1];
       }
@@ -294,7 +294,7 @@ export class BaselineStatus extends LitElement {
     return this.fetchData.render({
       pending: () => this.renderTemplate(missingFeature, true),
       complete: (feature) => {
-        if (!feature) {
+        if (!feature || !feature.baseline) {
           return this.renderTemplate(missingFeature);
         }
         return this.renderTemplate(feature);

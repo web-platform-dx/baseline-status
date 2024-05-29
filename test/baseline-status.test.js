@@ -40,23 +40,20 @@ describe('Baseline-status', () => {
         ok: true,
         status: 200,
         json: () => ({
-          "accent-color": {
-            "description": "The accent-color CSS property sets a color for checkboxes, radio buttons, and other form controls.",
-            "name": "accent-color",
-            "spec": "https://drafts.csswg.org/css-ui-4/#widget-accent",
-            "status": {
-              "baseline": "low",
-              "baseline_low_date": "2022-03-14",
-              "support": {
-                "chrome": "93",
-                "chrome_android": "93",
-                "edge": "93",
-                "firefox": "92",
-                "firefox_android": "92",
-                "safari": "15.4",
-                "safari_ios": "15.4"
-              }
-            }
+          "description": "The accent-color CSS property sets a color for checkboxes, radio buttons, and other form controls.",
+          "name": "accent-color",
+          "baseline": {
+            "status": "newly",
+            "low_date": "2022-03-14",
+          },
+          "browser_implementations": {
+            "chrome": "93",
+            "chrome_android": "93",
+            "edge": "93",
+            "firefox": "92",
+            "firefox_android": "92",
+            "safari": "15.4",
+            "safari_ios": "15.4"
           }
         })
       }
@@ -71,23 +68,21 @@ describe('Baseline-status', () => {
         ok: true,
         status: 200,
         json: () => ({
-          "array": {
-            "description": "Arrays are ordered lists of JavaScript values.",
-            "name": "Arrays (initial support)",
-            "status": {
-              "baseline": "high",
-              "baseline_high_date": "2018-01-29",
-              "baseline_low_date": "2015-07-29",
-              "support": {
-                "chrome": "1",
-                "chrome_android": "18",
-                "edge": "12",
-                "firefox": "1",
-                "firefox_android": "4",
-                "safari": "1",
-                "safari_ios": "1"
-              }
-            }
+          "description": "Arrays are ordered lists of JavaScript values.",
+          "name": "Arrays (initial support)",
+          "baseline": {
+            "status": "widely",
+            "high_date": "2018-01-29",
+            "low_date": "2015-07-29",
+          },
+          "browser_implementations": {
+            "chrome": "93",
+            "chrome_android": "93",
+            "edge": "93",
+            "firefox": "92",
+            "firefox_android": "92",
+            "safari": "15.4",
+            "safari_ios": "15.4"
           }
         })
       }

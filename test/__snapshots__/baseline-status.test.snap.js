@@ -1,4 +1,11 @@
+/**
+ * @license
+ * Copyright 2024 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 /* @web/test-runner snapshot v1 */
+
 export const snapshots = {};
 
 snapshots["Baseline-status renders with default values"] =
@@ -86,13 +93,13 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 `;
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
-snapshots["Baseline-status renders baseline-low widget for an existing feature"] =
+snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
 `<h1>
   accent-color
 </h1>
 <details>
   <summary>
-    <baseline-icon support="low">
+    <baseline-icon support="newly">
     </baseline-icon>
     <div class="baseline-status-title">
       <div>
@@ -105,13 +112,13 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
         </span>
       </div>
       <div>
-        <browser-support-icon class="support-low">
+        <browser-support-icon class="support-newly">
         </browser-support-icon>
-        <browser-support-icon class="support-low">
+        <browser-support-icon class="support-newly">
         </browser-support-icon>
-        <browser-support-icon class="support-low">
+        <browser-support-icon class="support-newly">
         </browser-support-icon>
-        <browser-support-icon class="support-low">
+        <browser-support-icon class="support-newly">
         </browser-support-icon>
       </div>
     </div>
@@ -130,13 +137,13 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
 `;
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
-snapshots["Baseline-status renders baseline-high widget for an existing feature"] =
+snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
 `<h1>
   Arrays (initial support)
 </h1>
 <details>
   <summary>
-    <baseline-icon support="high">
+    <baseline-icon support="widely">
     </baseline-icon>
     <div class="baseline-status-title">
       <div>
@@ -146,13 +153,13 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
         Widely Available
       </div>
       <div>
-        <browser-support-icon class="support-high">
+        <browser-support-icon class="support-widely">
         </browser-support-icon>
-        <browser-support-icon class="support-high">
+        <browser-support-icon class="support-widely">
         </browser-support-icon>
-        <browser-support-icon class="support-high">
+        <browser-support-icon class="support-widely">
         </browser-support-icon>
-        <browser-support-icon class="support-high">
+        <browser-support-icon class="support-widely">
         </browser-support-icon>
       </div>
     </div>
