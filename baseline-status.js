@@ -275,7 +275,7 @@ export class BaselineStatus extends LitElement {
         ${prefix}${BASELINE_DEFS[baseline].description}
       </p>
       <p>
-        <a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.id}.yml">Learn more</a>
+        <a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml">Learn more</a>
       </p>
     </details>`;
   }
