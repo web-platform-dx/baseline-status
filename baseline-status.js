@@ -15,19 +15,18 @@ const ICONS = {
   safari: html`<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" xmlns:v="https://vecta.io/nano"><g clip-path="url(#D)"><path opacity=".53" d="M19.505 10.524a8.76 8.76 0 0 1-.708 3.447c-.468 1.093-1.153 2.086-2.017 2.922a9.33 9.33 0 0 1-3.018 1.953 9.57 9.57 0 0 1-7.121 0 9.33 9.33 0 0 1-3.018-1.953c-.864-.836-1.549-1.83-2.017-2.922a8.76 8.76 0 0 1-.708-3.447c0-2.389.98-4.68 2.725-6.37s4.111-2.638 6.579-2.638a9.57 9.57 0 0 1 3.56.686 9.33 9.33 0 0 1 3.018 1.953c.864.837 1.549 1.83 2.017 2.923a8.76 8.76 0 0 1 .708 3.447z" fill="#000"/><path d="M19.859 9.729c0 1.275-.25 2.538-.735 3.716s-1.197 2.249-2.094 3.151-1.962 1.617-3.133 2.105a9.61 9.61 0 0 1-3.696.739 9.63 9.63 0 0 1-6.829-2.844 9.74 9.74 0 0 1 0-13.734A9.63 9.63 0 0 1 10.201.018a9.61 9.61 0 0 1 3.696.739c1.172.488 2.236 1.203 3.133 2.105s1.608 1.972 2.094 3.151.735 2.441.735 3.716z" fill="url(#B)" stroke="#cdcdcd" stroke-width=".352" stroke-linejoin="round"/><path d="M19.102 9.729c0 2.374-.938 4.65-2.607 6.329s-3.933 2.621-6.294 2.621-4.625-.943-6.294-2.621-2.607-3.955-2.607-6.329.938-4.65 2.607-6.329S7.84.778 10.201.778s4.625.943 6.294 2.621 2.607 3.955 2.607 6.329z" fill="url(#C)"/><path d="M10.2 1.245a.13.13 0 0 0-.13.13v1.505a.13.13 0 0 0 .13.13.13.13 0 0 0 .13-.13V1.376a.13.13 0 0 0-.13-.13zm-.849.054c-.009-.001-.017-.001-.026 0a.13.13 0 0 0-.116.143l.065.63a.13.13 0 0 0 .143.116.13.13 0 0 0 .116-.143l-.065-.63a.13.13 0 0 0-.116-.116zm1.704.001a.13.13 0 0 0-.116.116l-.066.63a.13.13 0 0 0 .115.143.13.13 0 0 0 .143-.116l.066-.63a.13.13 0 0 0-.116-.143c-.009-.001-.018-.001-.026 0zm-2.576.127c-.009 0-.017.001-.026.003a.13.13 0 0 0-.1.155l.31 1.473a.13.13 0 0 0 .154.101.13.13 0 0 0 .1-.155l-.31-1.473a.13.13 0 0 0-.128-.103zm3.448.001a.13.13 0 0 0-.128.103l-.311 1.472a.13.13 0 0 0 .1.155.13.13 0 0 0 .154-.101l.311-1.472a.13.13 0 0 0-.1-.155c-.009-.002-.018-.003-.026-.003zm-4.28.235c-.017-.002-.034 0-.051.006a.13.13 0 0 0-.083.164l.195.602c.022.069.095.106.164.084a.13.13 0 0 0 .083-.164l-.195-.602a.13.13 0 0 0-.112-.09zm5.108 0a.13.13 0 0 0-.112.09l-.195.602a.13.13 0 0 0 .083.164c.068.022.141-.015.164-.084l.195-.602a.13.13 0 0 0-.135-.17zm-5.931.303c-.017 0-.034.004-.05.011a.13.13 0 0 0-.066.172l.608 1.375c.029.066.106.096.171.066a.13.13 0 0 0 .066-.172l-.608-1.375a.13.13 0 0 0-.121-.078zm6.764.005a.13.13 0 0 0-.121.077l-.61 1.375a.13.13 0 0 0 .066.172c.066.029.142 0 .171-.066l.61-1.375c.029-.066 0-.143-.066-.172a.13.13 0 0 0-.05-.011zm-7.528.402c-.025-.002-.051.004-.074.017a.13.13 0 0 0-.048.178l.315.548c.036.063.115.084.177.048s.083-.116.048-.178l-.315-.548a.13.13 0 0 0-.103-.065zm8.281 0c-.041.003-.081.026-.103.065l-.315.548c-.036.063-.015.142.048.178s.141.015.177-.048l.315-.548c.036-.063.015-.142-.048-.178-.023-.014-.049-.019-.074-.017zm-9.023.465a.13.13 0 0 0-.072.025c-.058.042-.071.124-.029.182l.879 1.218c.042.059.123.071.181.029s.071-.124.029-.182l-.879-1.218c-.026-.037-.068-.055-.109-.054zm9.774.007c-.042-.002-.083.017-.11.054l-.881 1.217c-.042.058-.03.14.029.182s.139.03.181-.029l.881-1.217c.042-.058.03-.14-.029-.182-.022-.016-.047-.024-.072-.025zm-10.437.553c-.033-.002-.067.009-.094.033-.053.048-.058.131-.01.184l.421.471c.048.054.13.058.183.01s.058-.131.01-.184l-.421-.471c-.024-.027-.057-.041-.09-.043zm11.092.001a.13.13 0 0 0-.09.043l-.421.47c-.048.054-.044.136.01.184s.135.044.183-.01l.421-.47c.048-.054.044-.136-.01-.184-.027-.024-.061-.035-.094-.033zM4.019 4.01a.13.13 0 0 0-.09.043c-.048.054-.044.136.01.184l1.113 1.007c.053.048.135.044.183-.01s.044-.136-.01-.184L4.113 4.043c-.027-.024-.06-.035-.094-.033zm12.366.004c-.033-.002-.067.009-.094.033l-1.113 1.006c-.053.048-.058.131-.01.184s.13.058.183.01l1.113-1.006c.053-.048.058-.131.01-.184-.024-.027-.056-.041-.09-.043zm-12.895.679c-.042-.002-.083.017-.109.054-.042.058-.029.14.029.182l.509.372c.058.042.139.03.181-.029s.029-.14-.029-.182l-.509-.372c-.022-.016-.047-.024-.072-.025zm13.423.005a.13.13 0 0 0-.072.025l-.51.372c-.058.042-.071.124-.029.182s.123.071.181.029l.51-.372c.058-.042.071-.124.029-.182-.026-.037-.068-.055-.11-.054zm-13.916.724c-.042.003-.081.026-.103.065a.13.13 0 0 0 .047.178l1.296.753c.062.036.141.015.177-.048a.13.13 0 0 0-.048-.178l-1.296-.753c-.023-.014-.049-.019-.074-.017zm14.407 0c-.025-.002-.051.004-.074.017l-1.296.753a.13.13 0 0 0-.047.178c.036.063.115.084.177.048l1.297-.753c.062-.036.083-.116.047-.178a.13.13 0 0 0-.103-.065zm-14.78.777c-.051-.001-.099.028-.121.077a.13.13 0 0 0 .066.172l.575.258c.066.029.142 0 .171-.066a.13.13 0 0 0-.066-.172l-.575-.258c-.016-.007-.033-.011-.05-.011zm15.156.005a.13.13 0 0 0-.051.011l-.575.257a.13.13 0 0 0-.066.172c.029.066.106.096.171.066l.575-.258a.13.13 0 0 0 .066-.172.13.13 0 0 0-.121-.077zm-15.489.807a.13.13 0 0 0-.112.09.13.13 0 0 0 .083.165l1.423.466c.068.022.141-.015.164-.084a.13.13 0 0 0-.083-.165l-1.423-.466c-.017-.006-.035-.007-.051-.006zm15.821.006c-.017-.002-.034 0-.051.006l-1.424.465a.13.13 0 0 0-.083.164c.022.069.095.106.164.084l1.423-.465a.13.13 0 0 0 .083-.164.13.13 0 0 0-.112-.09zm-16.028.847a.13.13 0 0 0-.128.103.13.13 0 0 0 .1.155l.616.132a.13.13 0 1 0 .054-.255l-.616-.132c-.009-.002-.018-.003-.026-.003zm16.234.001c-.009 0-.017.001-.026.003l-.616.132a.13.13 0 1 0 .054.255l.616-.132a.13.13 0 0 0 .1-.155.13.13 0 0 0-.128-.103zm-16.391.856a.13.13 0 0 0-.116.116.13.13 0 0 0 .115.143l1.489.158a.13.13 0 1 0 .027-.26l-1.489-.158c-.009-.001-.018-.001-.026 0zm16.549.011c-.009-.001-.017-.001-.026 0l-1.489.156a.13.13 0 1 0 .027.26l1.489-.156a.13.13 0 0 0 .116-.143.13.13 0 0 0-.116-.116zm-16.574.866a.13.13 0 1 0 0 .261h.63a.13.13 0 1 0 0-.261h-.63zm15.969 0a.13.13 0 1 0 0 .261h.63a.13.13 0 1 0 0-.261h-.63zm-14.43.711c-.009-.001-.017-.001-.026 0l-1.489.156a.13.13 0 1 0 .027.26l1.489-.156a.13.13 0 0 0 .116-.143.13.13 0 0 0-.116-.116zm13.521.009a.13.13 0 0 0-.116.116.13.13 0 0 0 .115.143l1.489.158a.13.13 0 1 0 .027-.26l-1.489-.158a.13.13 0 0 0-.026 0zm-14.263.882c-.009 0-.017.001-.026.003l-.616.131a.13.13 0 1 0 .054.255l.616-.131a.13.13 0 0 0 .1-.155.13.13 0 0 0-.128-.103zm15.006.001a.13.13 0 0 0-.128.103.13.13 0 0 0 .1.155l.616.132a.13.13 0 1 0 .054-.255l-.616-.132c-.009-.002-.018-.003-.026-.003zm-13.968.514c-.017-.002-.034 0-.051.006l-1.424.465a.13.13 0 1 0 .08.248l1.424-.465a.13.13 0 0 0 .083-.165.13.13 0 0 0-.112-.09zm12.93.005a.13.13 0 0 0-.112.09.13.13 0 0 0 .083.165l1.423.466c.068.022.141-.015.164-.084a.13.13 0 0 0-.083-.165l-1.423-.466a.13.13 0 0 0-.051-.006zM3.192 12.735a.13.13 0 0 0-.05.011l-.575.258a.13.13 0 0 0-.066.172c.029.066.106.095.171.066l.575-.258a.13.13 0 0 0 .066-.172.13.13 0 0 0-.121-.078zm14.016.005c-.051-.001-.099.028-.121.077a.13.13 0 0 0 .066.172l.575.258c.066.029.142 0 .171-.066a.13.13 0 0 0-.066-.172l-.575-.258c-.016-.007-.034-.011-.05-.011zm-12.896.283c-.025-.002-.051.004-.074.017l-1.296.753c-.062.036-.083.116-.047.178s.115.084.177.048l1.296-.752c.062-.036.083-.116.048-.178-.022-.039-.062-.062-.103-.065zm11.778 0c-.042.003-.081.026-.103.065a.13.13 0 0 0 .047.178l1.296.752c.062.036.141.015.177-.048s.015-.142-.047-.178l-1.297-.753c-.023-.014-.049-.019-.074-.017zM3.988 14.127a.13.13 0 0 0-.072.025l-.51.372c-.058.043-.071.124-.029.182s.123.071.181.029l.51-.372c.058-.043.071-.124.029-.182-.026-.037-.068-.055-.109-.054zm12.421.004c-.042-.002-.083.017-.11.054-.042.059-.029.14.029.182l.509.372c.058.042.139.03.181-.029s.029-.14-.029-.182l-.509-.372c-.022-.016-.047-.024-.072-.025zm-11.267.045c-.033-.002-.067.009-.094.033l-1.113 1.006a.13.13 0 0 0-.01.184c.048.054.13.058.183.01l1.113-1.006c.053-.048.058-.13.01-.184-.024-.027-.056-.041-.09-.043zm10.113.004a.13.13 0 0 0-.09.043c-.048.054-.044.136.01.184l1.113 1.007c.053.048.135.044.183-.01s.044-.136-.01-.184l-1.113-1.007c-.027-.024-.061-.035-.094-.034zm-9.057.956c-.042-.002-.083.017-.11.054l-.881 1.217c-.042.058-.03.14.029.182s.139.03.181-.029l.881-1.217c.042-.059.03-.14-.029-.182-.022-.016-.047-.024-.072-.025zm7.996.005a.13.13 0 0 0-.072.025c-.058.043-.071.124-.029.182l.879 1.218c.042.058.123.072.181.029s.071-.124.029-.182l-.879-1.218c-.026-.037-.068-.055-.109-.054zm-9.133.188a.13.13 0 0 0-.09.043l-.421.47c-.048.054-.044.136.01.184s.135.044.183-.01l.421-.471c.048-.054.044-.136-.01-.184-.027-.024-.06-.035-.094-.034zm10.276.001c-.033-.002-.067.009-.094.034-.053.048-.058.13-.01.184l.421.471c.048.054.13.058.183.01s.058-.131.01-.184l-.421-.47a.13.13 0 0 0-.09-.043zm-7.91.522c-.051-.001-.099.028-.121.077l-.61 1.374a.13.13 0 0 0 .066.172c.066.029.142 0 .171-.066l.61-1.375a.13.13 0 0 0-.066-.172c-.016-.007-.034-.011-.05-.011zm5.536.004c-.017 0-.034.004-.05.011a.13.13 0 0 0-.066.172l.608 1.375c.029.066.106.096.171.066a.13.13 0 0 0 .066-.172l-.608-1.375c-.022-.05-.07-.079-.121-.078zm-6.608.421c-.042.003-.081.026-.103.065l-.315.548c-.036.063-.015.142.048.178s.141.015.177-.048l.315-.548a.13.13 0 0 0-.048-.178c-.023-.014-.049-.019-.074-.017zm7.688 0c-.025-.002-.051.004-.074.017a.13.13 0 0 0-.047.178l.315.548c.036.063.115.084.177.048s.083-.116.048-.178l-.315-.548c-.022-.039-.062-.062-.103-.065zm-5.258.02a.13.13 0 0 0-.128.103l-.311 1.472a.13.13 0 0 0 .1.155.13.13 0 0 0 .154-.101l.311-1.472a.13.13 0 0 0-.1-.155c-.009-.002-.018-.003-.026-.003zm2.824.001c-.009 0-.017.001-.026.003a.13.13 0 0 0-.1.155l.31 1.473a.13.13 0 0 0 .154.101.13.13 0 0 0 .1-.155l-.31-1.473a.13.13 0 0 0-.128-.103zm-1.41.149a.13.13 0 0 0-.13.13v1.505a.13.13 0 0 0 .13.13.13.13 0 0 0 .13-.13v-1.505a.13.13 0 0 0-.13-.13zm-2.382.486a.13.13 0 0 0-.112.09l-.195.602a.13.13 0 0 0 .083.164c.068.022.141-.015.164-.084l.195-.602a.13.13 0 0 0-.135-.171zm4.763 0c-.017-.002-.034 0-.051.006a.13.13 0 0 0-.083.165l.195.602a.13.13 0 0 0 .164.084.13.13 0 0 0 .083-.164l-.195-.602a.13.13 0 0 0-.112-.09zm-3.196.335a.13.13 0 0 0-.116.116l-.066.63a.13.13 0 0 0 .116.143.13.13 0 0 0 .143-.116l.066-.63a.13.13 0 0 0-.115-.143c-.009-.001-.018-.001-.026 0zm1.624.001c-.009-.001-.018-.001-.026 0a.13.13 0 0 0-.116.143l.065.63a.13.13 0 0 0 .143.116.13.13 0 0 0 .116-.143l-.065-.63a.13.13 0 0 0-.116-.116z" fill="#f4f2f3"/><g opacity=".409" filter="url(#A)"><path d="M16.283 4.509l-7.1 4.148-4.489 7.106 6.567-4.891 5.022-6.363z" fill="#000"/></g><path d="M11.218 10.8L9.183 8.657l7.22-4.883-5.184 7.026z" fill="#ff5150"/><path d="M11.218 10.8L9.183 8.657l-5.184 7.026 7.22-4.883z" fill="#f1f1f1"/><path opacity=".243" d="M3.999 15.684l7.22-4.883 5.184-7.026-12.404 11.91z" fill="#000"/></g><defs><filter id="A" x="2.149" y="1.964" width="16.679" height="16.344" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0"/><feBlend in="SourceGraphic"/><feGaussianBlur stdDeviation="1.272"/></filter><linearGradient id="B" x1="10.2" y1="19.44" x2="10.2" y2=".017" gradientUnits="userSpaceOnUse"><stop stop-color="#bdbdbd"/><stop offset="1" stop-color="#fff"/></linearGradient><radialGradient id="C" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.2407 8.42366) scale(9.65803 9.71116)"><stop stop-color="#06c2e7"/><stop offset=".25" stop-color="#0db8ec"/><stop offset=".5" stop-color="#12aef1"/><stop offset=".75" stop-color="#1f86f9"/><stop offset="1" stop-color="#107ddd"/></radialGradient><clipPath id="D"><path fill="#fff" d="M0 0h20.4v20.4H0z"/></clipPath></defs></svg>`
 };
 
-const API_ENDPOINT = 'https://www.unpkg.com/web-features@0.7.0/index.json';
-
+const API_ENDPOINT = 'https://api.webstatus.dev/v1/features/'
 
 const BASELINE_DEFS = {
   'limited': {
     title: 'Limited',
     description: 'This feature is not Baseline because it does not work in some of the most widely-used browsers.',
   },
-  'low': {
+  'newly': {
     title: '',
     description: 'his feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.'
   },
-  'high': {
+  'widely': {
     title: 'Widely Available',
     description: 'This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.'
   },
@@ -55,8 +54,8 @@ export class BaselineStatus extends LitElement {
     return css`
       :host {
         --color-limited: #EA8600;
-        --color-low: #1A73E8;
-        --color-high: #1E8E3E;
+        --color-newly: #1A73E8;
+        --color-widely: #1E8E3E;
         --color-no_data: #C6C6C6;
         --color-outline: #D9D9D9;
         --color-text: #000;
@@ -76,8 +75,8 @@ export class BaselineStatus extends LitElement {
       @media (prefers-color-scheme: dark) {
         :host {
           --color-limited: #F09409;
-          --color-low: #1B6EF3;
-          --color-high: #1EA446;
+          --color-newly: #1B6EF3;
+          --color-widely: #1EA446;
           --color-no_data: #C6C6C6;
 
           --color-outline: #D9D9D9;
@@ -123,7 +122,7 @@ export class BaselineStatus extends LitElement {
       }
 
       .baseline-badge {
-        background: var(--color-low);
+        background: var(--color-newly);
         color: #fff;
         font-size: 11px;
         padding: 0 4px;
@@ -142,8 +141,8 @@ export class BaselineStatus extends LitElement {
         display: none;
       }
 
-      browser-support-icon.support-low svg:last-child,
-      browser-support-icon.support-high svg:last-child {
+      browser-support-icon.support-newly svg:last-child,
+      browser-support-icon.support-widely svg:last-child {
         display: none;
       }
 
@@ -155,12 +154,12 @@ export class BaselineStatus extends LitElement {
         color: var(--color-limited);
       }
 
-      .support-low{
-        color: var(--color-low);
+      .support-newly{
+        color: var(--color-newly);
       }
 
-      .support-high {
-        color: var(--color-high);
+      .support-widely {
+        color: var(--color-widely);
       }
 
       details > summary .open-icon {
@@ -207,8 +206,9 @@ export class BaselineStatus extends LitElement {
   }
 
   fetchData = new Task(this, {
-    task: async (_, {signal}) => {
-      const response = await fetch(API_ENDPOINT, {signal, cache: "force-cache"});
+    task: async ([featureId], {signal}) => {
+      const url = API_ENDPOINT + this.featureId;
+      const response = await fetch(url, {signal, cache: "force-cache"});
       if (!response.ok) { throw new Error(response.status); }
       return response.json();
     },
@@ -216,8 +216,8 @@ export class BaselineStatus extends LitElement {
   });
 
   renderSupportIcon(baseline, support) {
-    support = support ? 'high' : 'limited';
-    support = (baseline === 'low' || baseline === 'no_data') ? baseline : support;
+    support = support ? 'widely' : 'limited';
+    support = (baseline === 'newly' || baseline === 'no_data') ? baseline : support;
 
     return html`<browser-support-icon class="support-${support}">
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" fill="none" viewBox="0 0 17 21"><path fill="currentColor" d="M1.253 3.31a8.843 8.843 0 0 1 5.47-1.882c4.882 0 8.838 3.927 8.838 8.772 0 4.845-3.956 8.772-8.837 8.772a8.842 8.842 0 0 1-5.47-1.882c-.237.335-.49.657-.758.966a10.074 10.074 0 0 0 6.228 2.14c5.562 0 10.07-4.475 10.07-9.996 0-5.52-4.508-9.996-10.07-9.996-2.352 0-4.514.8-6.228 2.14.268.309.521.631.757.966Z"/><path fill="currentColor" d="M11.348 8.125 6.34 13.056l-3.006-2.954 1.002-.985 1.999 1.965 4.012-3.942 1.002.985Z"/></svg>
@@ -225,27 +225,26 @@ export class BaselineStatus extends LitElement {
       </browser-support-icon>`;
   }
 
-  renderTemplate(baseline, feature, isLoading) {
+  renderTemplate(feature, isLoading) {
+    const baseline = feature.baseline.status;
     let prefix = '';
     let year = '';
     let badge = '';
 
-    if (baseline === 'low') {
+    if (baseline === 'newly') {
       prefix = 'This ';
       badge = html`<span class="baseline-badge">newly available</span>`
-      if (feature.status.baseline_low_date) {
+      if (feature.baseline.newly_date) {
         const date = new Intl.DateTimeFormat('en-GB', {
           year: 'numeric',
           month: 'long'
-        }).format(new Date(feature.status.baseline_low_date));
+        }).format(new Date(feature.baseline.newly_date));
         prefix = `Since ${date} t`;
         year = date.split(' ')[1];
       }
     }
 
     const title = isLoading ? 'Loading...' : BASELINE_DEFS[baseline].title;
-
-    console.log('featurename', feature.name)
 
     return html`
       <h1>${feature.name}</h1>
@@ -256,13 +255,13 @@ export class BaselineStatus extends LitElement {
           <div><strong>Baseline:</strong> ${title} ${year} ${badge}</div>
           <div>
             ${ICONS['chrome']}
-            ${this.renderSupportIcon(baseline, feature.status?.support?.chrome)}
+            ${this.renderSupportIcon(baseline, feature.browser_implementations?.chrome)}
             ${ICONS['edge']}
-            ${this.renderSupportIcon(baseline, feature.status?.support?.edge)}
+            ${this.renderSupportIcon(baseline, feature.browser_implementations?.edge)}
             ${ICONS['firefox']}
-            ${this.renderSupportIcon(baseline, feature.status?.support?.firefox)}
+            ${this.renderSupportIcon(baseline, feature.browser_implementations?.firefox)}
             ${ICONS['safari']}
-            ${this.renderSupportIcon(baseline, feature.status?.support?.safari)}
+            ${this.renderSupportIcon(baseline, feature.browser_implementations?.safari)}
           </div>
         </div>
 
@@ -285,34 +284,25 @@ export class BaselineStatus extends LitElement {
   }
 
   render() {
-    console.log('this.featureId', this.featureId)
+    const missingFeature = {
+      baseline: {
+        status: 'no_data',
+      },
+      id: this.featureId || 'Unknown feature',
+      name: this.featureId || 'Unknown feature'
+    };
     if (!this.featureId) {
-      console.log('aaaaaa')
-      return this.renderTemplate('no_data', {
-        id: 'Unknown feature',
-        name: 'Unknown feature'
-      })
+      return this.renderTemplate(missingFeature);
     }
     return this.fetchData.render({
-      pending: () => this.renderTemplate('no_data', {
-        id: this.featureId,
-        name: this.featureId
-      }, true),
-      complete: (webFeatures) => {
-        const feature = webFeatures[this.featureId];
+      pending: () => this.renderTemplate(missingFeature, true),
+      complete: (feature) => {
         if (!feature) {
-          return this.renderTemplate('no_data', {
-            id: this.featureId,
-            name: this.featureId
-          });
+          return this.renderTemplate(missingFeature);
         }
-        const baseline = feature.status.baseline || 'limited';
-        return this.renderTemplate(baseline, feature)
+        return this.renderTemplate(feature);
       },
-      error: () => this.renderTemplate('no_data', {
-        id: this.featureId,
-        name: this.featureId
-      }) ,
+      error: () => this.renderTemplate(missingFeature),
     });
   }
 }
