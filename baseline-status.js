@@ -275,7 +275,7 @@ export class BaselineStatus extends LitElement {
         ${prefix}${BASELINE_DEFS[baseline].description}
       </p>
       <p>
-        <a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml">Learn more</a>
+        ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml">Learn more</a>`}
       </p>
     </details>`;
   }
@@ -285,7 +285,6 @@ export class BaselineStatus extends LitElement {
       baseline: {
         status: 'no_data',
       },
-      id: this.featureId || 'Unknown feature',
       name: this.featureId || 'Unknown feature'
     };
     if (!this.featureId) {

@@ -8,7 +8,7 @@
 
 export const snapshots = {};
 
-snapshots["Baseline-status renders with default values"] =
+snapshots["Baseline-status renders with default values"] = 
 `<h1>
   Unknown feature
 </h1>
@@ -41,9 +41,6 @@ snapshots["Baseline-status renders with default values"] =
     We currently don’t have browser support information about this feature.
   </p>
   <p>
-    <a href="https://github.com/web-platform-dx/web-features/blob/main/features/Unknown feature.yml">
-      Learn more
-    </a>
   </p>
 </details>
 `;
@@ -93,7 +90,7 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 `;
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
-snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
+snapshots["Baseline-status renders baseline-low widget for an existing feature"] =
 `<h1>
   accent-color
 </h1>
@@ -137,7 +134,7 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
 `;
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
-snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
+snapshots["Baseline-status renders baseline-high widget for an existing feature"] =
 `<h1>
   Arrays (initial support)
 </h1>
@@ -178,7 +175,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
 `;
 /* end snapshot Baseline-status renders baseline-high widget for an existing feature */
 
-snapshots["Baseline-status renders default widget for an unexisting feature"] =
+snapshots["Baseline-status renders default widget for an unexisting feature"] = 
 `<h1>
   i-dont-exist
 </h1>
@@ -211,9 +208,6 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
     We currently don’t have browser support information about this feature.
   </p>
   <p>
-    <a href="https://github.com/web-platform-dx/web-features/blob/main/features/i-dont-exist.yml">
-      Learn more
-    </a>
   </p>
 </details>
 `;
