@@ -775,7 +775,7 @@ export class BaselineStatus extends LitElement {
             safari?.status,
           )}"
         >
-          <baseline-icon support="${baseline}"></baseline-icon>
+          <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
             <div><strong>Baseline:</strong> ${title} ${year} ${badge}</div>
             <div>
@@ -786,7 +786,7 @@ export class BaselineStatus extends LitElement {
             </div>
           </div>
 
-          <span class="open-icon">
+          <span class="open-icon" aria-hidden="true">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="11"
