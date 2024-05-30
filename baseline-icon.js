@@ -65,9 +65,7 @@ export default class BaselineIcon extends LitElement {
 
   render() {
     return html`
-      <div
-        aria-label="Baseline icon support ${this.support}"
-        class="support-${this.support}"></div>
+      <div class="support-${this.support}"></div>
     `
   }
 }
