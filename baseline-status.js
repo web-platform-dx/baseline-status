@@ -24,7 +24,7 @@ const BASELINE_DEFS = {
   },
   'newly': {
     title: '',
-    description: 'his feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.'
+    description: 'This feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.'
   },
   'widely': {
     title: 'Widely Available',
@@ -226,25 +226,23 @@ export class BaselineStatus extends LitElement {
   }
 
   renderTemplate(feature, isLoading) {
-    const baseline = feature.baseline.status;
-    let prefix = '';
+    const baseline = feature.baseline.status || '';
+
+    const title = isLoading ? 'Loading...' : BASELINE_DEFS[baseline].title;
+    let description = BASELINE_DEFS[baseline].description;
     let year = '';
     let badge = '';
 
-    if (baseline === 'newly') {
-      prefix = 'This ';
-      badge = html`<span class="baseline-badge">newly available</span>`
-      if (feature.baseline.low_date) {
-        const date = new Intl.DateTimeFormat('en-GB', {
-          year: 'numeric',
-          month: 'long'
-        }).format(new Date(feature.baseline.low_date));
-        prefix = `Since ${date} t`;
-        year = date.split(' ')[1];
-      }
+    if (baseline === 'newly' && feature.baseline.low_date) {
+      const formattedate = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long'
+      }).format(new Date(feature.baseline.low_date));
+      description = `Since ${formattedDate} this feature works across the latest
+        devices and browser versions. This feature might not work in older
+        devices or browsers.`
+      year = date.split(' ')[1];
     }
-
-    const title = isLoading ? 'Loading...' : BASELINE_DEFS[baseline].title;
 
     return html`
       <h1>${feature.name}</h1>
@@ -272,7 +270,7 @@ export class BaselineStatus extends LitElement {
         </span>
       </summary>
       <p>
-        ${prefix}${BASELINE_DEFS[baseline].description}
+        ${description}
       </p>
       <p>
         ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml">Learn more</a>`}
