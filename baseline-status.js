@@ -217,7 +217,7 @@ export class BaselineStatus extends LitElement {
 
   renderSupportIcon(baseline, browserImplementation) {
     const isSupported = browserImplementation?.status === 'available';
-    let support = (baseline === 'limited')
+    const support = (baseline === 'limited')
       ? isSupported ? 'widely' : 'limited'
       : baseline;
     return html`<browser-support-icon class="support-${support}">
@@ -244,8 +244,6 @@ export class BaselineStatus extends LitElement {
         devices or browsers.`
       year = formattedDate.split(' ')[1];
     }
-
-    console.log(feature)
 
     return html`
       <h1>${feature.name}</h1>
