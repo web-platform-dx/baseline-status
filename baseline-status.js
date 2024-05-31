@@ -215,10 +215,11 @@ export class BaselineStatus extends LitElement {
     args: () => ['_']
   });
 
-  renderSupportIcon(baseline, support) {
-    support = support ? 'widely' : 'limited';
-    support = (baseline === 'newly' || baseline === 'no_data') ? baseline : support;
-
+  renderSupportIcon(baseline, browserImplementation) {
+    const isSupported = browserImplementation?.status === 'available';
+    let support = (baseline === 'limited')
+      ? isSupported ? 'widely' : 'limited'
+      : baseline;
     return html`<browser-support-icon class="support-${support}">
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" fill="none" viewBox="0 0 17 21"><path fill="currentColor" d="M1.253 3.31a8.843 8.843 0 0 1 5.47-1.882c4.882 0 8.838 3.927 8.838 8.772 0 4.845-3.956 8.772-8.837 8.772a8.842 8.842 0 0 1-5.47-1.882c-.237.335-.49.657-.758.966a10.074 10.074 0 0 0 6.228 2.14c5.562 0 10.07-4.475 10.07-9.996 0-5.52-4.508-9.996-10.07-9.996-2.352 0-4.514.8-6.228 2.14.268.309.521.631.757.966Z"/><path fill="currentColor" d="M11.348 8.125 6.34 13.056l-3.006-2.954 1.002-.985 1.999 1.965 4.012-3.942 1.002.985Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" fill="none" viewBox="0 0 17 21"><path fill="currentColor" d="M1.254 3.31a8.843 8.843 0 0 1 5.47-1.882c4.881 0 8.838 3.927 8.838 8.772 0 4.845-3.957 8.772-8.838 8.772a8.842 8.842 0 0 1-5.47-1.882c-.236.335-.49.657-.757.966a10.074 10.074 0 0 0 6.227 2.14c5.562 0 10.071-4.475 10.071-9.996 0-5.52-4.509-9.996-10.07-9.996-2.352 0-4.515.8-6.228 2.14.268.309.52.631.757.966Z"/><path fill="currentColor" d="m10.321 8.126-1.987 1.972 1.987 1.972-.993.986-1.987-1.972-1.987 1.972-.993-.986 1.986-1.972-1.986-1.972.993-.986 1.987 1.972L9.328 7.14l.993.986Z"/></svg>
@@ -234,15 +235,17 @@ export class BaselineStatus extends LitElement {
     let badge = '';
 
     if (baseline === 'newly' && feature.baseline.low_date) {
-      const formattedate = new Intl.DateTimeFormat('en-US', {
+      const formattedDate = new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
         month: 'long'
       }).format(new Date(feature.baseline.low_date));
       description = `Since ${formattedDate} this feature works across the latest
         devices and browser versions. This feature might not work in older
         devices or browsers.`
-      year = date.split(' ')[1];
+      year = formattedDate.split(' ')[1];
     }
+
+    console.log(feature)
 
     return html`
       <h1>${feature.name}</h1>
