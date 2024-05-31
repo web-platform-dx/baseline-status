@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import resolve from '@rollup/plugin-node-resolve';
+import image from '@rollup/plugin-image';
 import terser from '@rollup/plugin-terser';
 import minifyHTML from 'rollup-plugin-html-literals';
 import summary from 'rollup-plugin-summary';
@@ -22,6 +23,7 @@ export default {
   output: { dir: 'dist' },
   plugins: [
     resolve(),
+    image(),
     minifyHTML(),
     terser({
       compress: {
