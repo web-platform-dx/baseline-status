@@ -20,23 +20,23 @@ const API_ENDPOINT = 'https://api.webstatus.dev/v1/features/'
 const BASELINE_DEFS = {
   'limited': {
     title: 'Limited',
-    description: 'This feature is not Baseline because it does not work in some of the most widely-used browsers.',
+    defaultDescription: 'This feature is not Baseline because it does not work in some of the most widely-used browsers.',
   },
   'newly': {
     title: '',
-    description: 'This feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.'
+    defaultDescription: 'This feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.'
   },
   'widely': {
     title: 'Widely Available',
-    description: 'This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.'
+    defaultDescription: 'This feature is well established and works across many devices and browser versions.'
   },
   'loading': {
     title: 'Loading',
-    description: ''
+    defaultDescription: ''
   },
   'no_data': {
     title: 'Unknown availability',
-    description: 'We currently don’t have browser support information about this feature.'
+    defaultDescription: 'We currently don’t have browser support information about this feature.'
   }
 };
 
@@ -137,12 +137,13 @@ export class BaselineStatus extends LitElement {
       }
 
       browser-support-icon.support-no_data svg:first-child,
-      browser-support-icon.support-limited svg:first-child {
+      browser-support-icon.support-unavailable svg:first-child {
         display: none;
       }
 
       browser-support-icon.support-newly svg:last-child,
-      browser-support-icon.support-widely svg:last-child {
+      browser-support-icon.support-widely svg:last-child,
+      browser-support-icon.support-available svg:last-child {
         display: none;
       }
 
@@ -150,15 +151,16 @@ export class BaselineStatus extends LitElement {
         color: var(--color-no_data);
       }
 
-      .support-limited {
+      .support-unavailable {
         color: var(--color-limited);
       }
 
-      .support-newly{
+      .support-newly {
         color: var(--color-newly);
       }
 
-      .support-widely {
+      .support-widely,
+      .support-available {
         color: var(--color-widely);
       }
 
@@ -216,9 +218,8 @@ export class BaselineStatus extends LitElement {
   });
 
   renderSupportIcon(baseline, browserImplementation) {
-    const isSupported = browserImplementation?.status === 'available';
     const support = (baseline === 'limited')
-      ? isSupported ? 'widely' : 'limited'
+      ? (browserImplementation?.status || 'unavailable')
       : baseline;
     return html`<browser-support-icon class="support-${support}">
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" fill="none" viewBox="0 0 17 21"><path fill="currentColor" d="M1.253 3.31a8.843 8.843 0 0 1 5.47-1.882c4.882 0 8.838 3.927 8.838 8.772 0 4.845-3.956 8.772-8.837 8.772a8.842 8.842 0 0 1-5.47-1.882c-.237.335-.49.657-.758.966a10.074 10.074 0 0 0 6.228 2.14c5.562 0 10.07-4.475 10.07-9.996 0-5.52-4.508-9.996-10.07-9.996-2.352 0-4.514.8-6.228 2.14.268.309.521.631.757.966Z"/><path fill="currentColor" d="M11.348 8.125 6.34 13.056l-3.006-2.954 1.002-.985 1.999 1.965 4.012-3.942 1.002.985Z"/></svg>
@@ -226,24 +227,50 @@ export class BaselineStatus extends LitElement {
       </browser-support-icon>`;
   }
 
-  renderTemplate(feature, isLoading) {
-    const baseline = feature.baseline.status || '';
-
-    const title = isLoading ? 'Loading...' : BASELINE_DEFS[baseline].title;
-    let description = BASELINE_DEFS[baseline].description;
-    let year = '';
-    let badge = '';
-
-    if (baseline === 'newly' && feature.baseline.low_date) {
-      const formattedDate = new Intl.DateTimeFormat('en-US', {
+  /**
+   * Returns feature's low_date as mm-yyyy string or empty string if low_date
+   * is not present.
+   * @param {object} feature
+   * @returns {string}
+   */
+  getBaselineDate(feature) {
+    return feature.baseline.low_date ?
+      new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
         month: 'long'
-      }).format(new Date(feature.baseline.low_date));
-      description = `Since ${formattedDate} this feature works across the latest
+      }).format(new Date(feature.baseline.low_date)) :
+      '';
+  }
+
+  /**
+   * Returns Baseline's description.
+   * @param {string} baseline
+   * @param {string} date
+   * @returns {string}
+   */
+  getDescriptionDate(baseline, date) {
+    if (baseline === 'newly' && date) {
+      return `Since ${date} this feature works across the latest
         devices and browser versions. This feature might not work in older
         devices or browsers.`
-      year = formattedDate.split(' ')[1];
+    } else if (baseline === 'widely' && date) {
+      return `This feature is well established and works across many
+        devices and browser versions. It’s been available across browsers
+        since ${date}`
     }
+    return BASELINE_DEFS[baseline].defaultDescription;
+  }
+
+  renderTemplate(feature, isLoading) {
+    const baseline = feature.baseline.status || 'no_data';
+
+    const title = isLoading ? 'Loading...' : BASELINE_DEFS[baseline].title;
+    const badge = baseline === 'newly' ?
+      html`<span class="baseline-badge">newly available</span>` :
+      '';
+    const baselineDate = this.getBaselineDate(feature);
+    const description = this.getDescriptionDate(baseline, baselineDate);
+    const year = baseline === 'newly' ? baselineDate.split(' ')[1] : '';
 
     return html`
       <h1>${feature.name}</h1>
