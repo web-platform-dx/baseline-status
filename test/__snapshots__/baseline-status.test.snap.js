@@ -141,7 +141,9 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
     </span>
   </summary>
   <p>
-    Since March 2022, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+    Since March 2022 this feature works across the latest
+        devices and browser versions. This feature might not work in older
+        devices or browsers.
   </p>
   <p>
     <a href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml">
@@ -191,7 +193,9 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
     </span>
   </summary>
   <p>
-    This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+    This feature is well established and works across many
+        devices and browser versions. It’s been available across browsers
+        since July 2015
   </p>
   <p>
     <a href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml">
