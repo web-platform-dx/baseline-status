@@ -270,7 +270,9 @@ export class BaselineStatus extends LitElement {
       '';
     const baselineDate = this.getBaselineDate(feature);
     const description = this.getDescriptionDate(baseline, baselineDate);
-    const year = baseline === 'newly' ? baselineDate.split(' ')[1] : '';
+    const year = (baseline === 'newly' && baselineDate) ?
+      baselineDate.split(' ')[1] :
+      '';
 
     return html`
       <h1>${feature.name}</h1>
