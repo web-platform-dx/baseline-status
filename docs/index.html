@@ -4,12 +4,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>&lt;baseline-status> Demo</title>
     <script type="module" src="../dist/baseline-status.js"></script>
     <style>
+      body {
+        font-family: Roboto, sans-serif;
+      }
+      baseline-status {
+        margin-block-end: 1rem;
+      }
       @media (prefers-color-scheme: dark) {
         body {
-          background: #222;
+          background-color: #222;
         }
       }
     </style>

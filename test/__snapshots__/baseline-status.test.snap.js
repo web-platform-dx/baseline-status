@@ -13,10 +13,16 @@ snapshots["Baseline-status renders with default values"] =
   Unknown feature
 </h1>
 <details>
-  <summary>
-    <baseline-icon support="no_data">
+  <summary aria-label="Baseline: Unknown availability. Supported in Chrome: unknown. Supported in Edge: unknown. Supported in Firefox: unknown. Supported in Safari: unknown.">
+    <baseline-icon
+      aria-hidden="true"
+      support="no_data"
+    >
     </baseline-icon>
-    <div class="baseline-status-title">
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
       <div>
         <strong>
           Baseline:
@@ -34,7 +40,10 @@ snapshots["Baseline-status renders with default values"] =
         </browser-support-icon>
       </div>
     </div>
-    <span class="open-icon">
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
     </span>
   </summary>
   <p>
@@ -95,10 +104,16 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
   accent-color
 </h1>
 <details>
-  <summary>
-    <baseline-icon support="newly">
+  <summary aria-label="Baseline:  2022 (newly available). Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+    <baseline-icon
+      aria-hidden="true"
+      support="newly"
+    >
     </baseline-icon>
-    <div class="baseline-status-title">
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
       <div>
         <strong>
           Baseline:
@@ -119,7 +134,10 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
         </browser-support-icon>
       </div>
     </div>
-    <span class="open-icon">
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
     </span>
   </summary>
   <p>
@@ -141,15 +159,21 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
   Arrays (initial support)
 </h1>
 <details>
-  <summary>
-    <baseline-icon support="widely">
+  <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+    <baseline-icon
+      aria-hidden="true"
+      support="widely"
+    >
     </baseline-icon>
-    <div class="baseline-status-title">
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
       <div>
         <strong>
           Baseline:
         </strong>
-        Widely Available
+        Widely available
       </div>
       <div>
         <browser-support-icon class="support-widely">
@@ -162,7 +186,10 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
         </browser-support-icon>
       </div>
     </div>
-    <span class="open-icon">
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
     </span>
   </summary>
   <p>
@@ -184,10 +211,16 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
   i-dont-exist
 </h1>
 <details>
-  <summary>
-    <baseline-icon support="no_data">
+  <summary aria-label="Baseline: Unknown availability. Supported in Chrome: unknown. Supported in Edge: unknown. Supported in Firefox: unknown. Supported in Safari: unknown.">
+    <baseline-icon
+      aria-hidden="true"
+      support="no_data"
+    >
     </baseline-icon>
-    <div class="baseline-status-title">
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
       <div>
         <strong>
           Baseline:
@@ -205,7 +238,10 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
         </browser-support-icon>
       </div>
     </div>
-    <span class="open-icon">
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
     </span>
   </summary>
   <p>
