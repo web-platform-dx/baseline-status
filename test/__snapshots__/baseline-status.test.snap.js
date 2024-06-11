@@ -159,7 +159,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
   Arrays (initial support)
 </h1>
 <details>
-  <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+  <summary aria-label="Baseline: Widely Available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
     <baseline-icon
       aria-hidden="true"
       support="widely"
@@ -173,7 +173,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
         <strong>
           Baseline:
         </strong>
-        Widely available
+        Widely Available
       </div>
       <div>
         <browser-support-icon class="support-widely">
