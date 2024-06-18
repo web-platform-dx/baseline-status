@@ -5,4 +5,4 @@ https://github.com/web-platform-dx/web-features data
 
 ## Demo
 
-https://chrome-devrel-demo-space.ew.r.appspot.com/baseline-status/
+https://web-devrel-apps.uc.r.appspot.com/baseline-status/
