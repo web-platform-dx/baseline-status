@@ -56,7 +56,7 @@ export class BaselineStatus extends LitElement {
         --color-limited: #ea8600;
         --color-newly: #1a73e8;
         --color-widely: #1e8e3e;
-        --color-no_data: #c6c6c6;
+        --color-no_data: #707070;
         --color-outline: #d9d9d9;
         --color-text: #000;
         --color-link: #1a73e8;
@@ -123,7 +123,7 @@ export class BaselineStatus extends LitElement {
       }
 
       .baseline-badge {
-        background: var(--color-newly);
+        background: #3367D6;
         color: #fff;
         font-size: 11px;
         padding: 0 4px;
