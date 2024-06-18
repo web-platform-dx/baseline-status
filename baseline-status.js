@@ -145,10 +145,6 @@ export class BaselineStatus extends LitElement {
         white-space: nowrap;
       }
 
-      browser-support-icon {
-        /* margin-right: 16px; */
-      }
-
       browser-support-icon.support-no_data svg:first-child,
       browser-support-icon.support-unavailable svg:first-child {
         display: none;
@@ -178,10 +174,16 @@ export class BaselineStatus extends LitElement {
       }
 
       details > summary .open-icon {
-        width: 21px;
-        height: 21px;
-        margin-left: 16px;
+        width: 10px;
+        height: 20px;
+        margin-left: auto;
         color: var(--text-color);
+      }
+
+      @media (min-width: 420px) {
+        details > summary .open-icon {
+          margin-left: 48px;
+        }
       }
 
       details > summary .open-icon svg {
