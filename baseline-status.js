@@ -74,10 +74,10 @@ export class BaselineStatus extends LitElement {
 
       @media (prefers-color-scheme: dark) {
         :host {
-          --color-limited: #f09409;
-          --color-newly: #1b6ef3;
-          --color-widely: #1ea446;
-          --color-no_data: #c6c6c6;
+          --color-limited: #f09418;
+          --color-newly: #4185ff;
+          --color-widely: #24a446;
+          --color-no_data: #868686;
 
           --color-outline: #d9d9d9;
           --color-text: #fff;
