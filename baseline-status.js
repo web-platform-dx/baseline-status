@@ -65,7 +65,7 @@ export class BaselineStatus extends LitElement {
         display: block;
         border: solid 1px var(--color-outline);
         border-radius: 8px;
-        padding: 17px 21px;
+        padding: 16px 24px 0 24px;
         max-width: 800px;
         font-family: Roboto, sans-serif;
         font-size: 14px;
@@ -89,6 +89,7 @@ export class BaselineStatus extends LitElement {
       h1 {
         font-weight: normal;
         font-size: 20px;
+        margin: 0;
       }
 
       a,
@@ -130,10 +131,22 @@ export class BaselineStatus extends LitElement {
         text-transform: uppercase;
         line-height: 20px;
         margin-inline: 0.5rem;
+        white-space: nowrap;
+      }
+
+      .baseline-status-browsers {
+        font-size: 0;
+        max-width: 200px;
+        display: flex;
+        gap: 16px;
+      }
+
+      .baseline-status-browsers span {
+        white-space: nowrap;
       }
 
       browser-support-icon {
-        margin-left: -5px;
+        /* margin-right: 16px; */
       }
 
       browser-support-icon.support-no_data svg:first-child,
@@ -167,7 +180,7 @@ export class BaselineStatus extends LitElement {
       details > summary .open-icon {
         width: 21px;
         height: 21px;
-        margin-left: auto;
+        margin-left: 16px;
         color: var(--text-color);
       }
 
@@ -185,9 +198,9 @@ export class BaselineStatus extends LitElement {
         font-size: 16px;
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 16px;
         justify-content: space-between;
-        padding: 1rem 0;
+        padding: 16px 0;
       }
 
       summary::-webkit-details-marker {
@@ -309,12 +322,12 @@ export class BaselineStatus extends LitElement {
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
-            <div><strong>Baseline:</strong> ${title} ${year} ${badge}</div>
-            <div>
-              ${ICONS['chrome']} ${this.renderSupportIcon(baseline, chrome)}
-              ${ICONS['edge']} ${this.renderSupportIcon(baseline, edge)}
-              ${ICONS['firefox']} ${this.renderSupportIcon(baseline, firefox)}
-              ${ICONS['safari']} ${this.renderSupportIcon(baseline, safari)}
+            <div><strong>Baseline</strong> ${title} ${year} ${badge}</div>
+            <div class="baseline-status-browsers">
+              <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, chrome)}</span>
+              <span>${ICONS['edge']} ${this.renderSupportIcon(baseline, edge)}</span>
+              <span>${ICONS['firefox']} ${this.renderSupportIcon(baseline, firefox)}</span>
+              <span>${ICONS['safari']} ${this.renderSupportIcon(baseline, safari)}</span>
             </div>
           </div>
         </div>
