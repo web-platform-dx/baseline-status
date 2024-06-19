@@ -1,4 +1,4 @@
-# <baseline-status> web component
+# &lt;baseline-status> web component
 
 A widget displaying Baseline status of a web feature based on
 https://github.com/web-platform-dx/web-features data
