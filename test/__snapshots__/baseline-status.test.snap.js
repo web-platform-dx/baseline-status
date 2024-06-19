@@ -25,19 +25,27 @@ snapshots["Baseline-status renders with default values"] =
     >
       <div>
         <strong>
-          Baseline:
+          Baseline
         </strong>
         Unknown availability
       </div>
-      <div>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
       </div>
     </div>
     <span
@@ -116,22 +124,30 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
     >
       <div>
         <strong>
-          Baseline:
+          Baseline
         </strong>
         2022
         <span class="baseline-badge">
           newly available
         </span>
       </div>
-      <div>
-        <browser-support-icon class="support-newly">
-        </browser-support-icon>
-        <browser-support-icon class="support-newly">
-        </browser-support-icon>
-        <browser-support-icon class="support-newly">
-        </browser-support-icon>
-        <browser-support-icon class="support-newly">
-        </browser-support-icon>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-newly">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-newly">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-newly">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-newly">
+          </browser-support-icon>
+        </span>
       </div>
     </div>
     <span
@@ -171,19 +187,27 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
     >
       <div>
         <strong>
-          Baseline:
+          Baseline
         </strong>
         Widely Available
       </div>
-      <div>
-        <browser-support-icon class="support-widely">
-        </browser-support-icon>
-        <browser-support-icon class="support-widely">
-        </browser-support-icon>
-        <browser-support-icon class="support-widely">
-        </browser-support-icon>
-        <browser-support-icon class="support-widely">
-        </browser-support-icon>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
       </div>
     </div>
     <span
@@ -223,19 +247,27 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
     >
       <div>
         <strong>
-          Baseline:
+          Baseline
         </strong>
         Unknown availability
       </div>
-      <div>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
-        <browser-support-icon class="support-no_data">
-        </browser-support-icon>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-no_data">
+          </browser-support-icon>
+        </span>
       </div>
     </div>
     <span
