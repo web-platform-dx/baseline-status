@@ -19,7 +19,7 @@ import summary from 'rollup-plugin-summary';
 
 export default {
   input: 'baseline-status.js',
-  output: { dir: 'dist' },
+  output: { file: 'baseline-status.min.js' },
   plugins: [
     resolve(),
     minifyHTML(),
