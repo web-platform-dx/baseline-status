@@ -11,6 +11,7 @@
   },
   "author": "ewag@google.com",
   "license": "Apache-2.0",
+  "repository": "github:GoogleChrome/baseline-status",
   "dependencies": {
     "@lit/task": "^1.0.0",
     "lit": "^3.1.3"
