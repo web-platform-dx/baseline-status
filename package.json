@@ -1,9 +1,10 @@
 {
   "name": "baseline-status",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A widget displaying Baseline status of a web feature",
   "main": "baseline-status.js",
   "type": "module",
+  "module": "baseline-status.js",
   "scripts": {
     "serve": "rollup -c && wds --watch",
     "test": "wtr test/**/*.test.js --node-resolve",
