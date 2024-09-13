@@ -1,8 +1,3 @@
-/**
- * @license
- * Copyright 2024 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
 import { LitElement, html, css } from 'lit';
 import { Task } from '@lit/task';
 // eslint-disable-next-line no-unused-vars
