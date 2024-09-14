@@ -43,3 +43,15 @@ It can be used for quick testing and prototyping.
 <script src="https://cdn.jsdelivr.net/npm/baseline-status@1.0.4/baseline-status.min.js" type="module"></script>
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
+
+## Development
+
+Run locally:
+
+```
+npm run serve
+```
+
+The local server uses wds [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) package.
+To enable web component related polyfills for legacy browsers, it uses `@web/dev-server-legacy` package.
+See `web-dev-server.config` file for the exact configuration.

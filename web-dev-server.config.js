@@ -1,9 +1,3 @@
-/**
- * @license
- * Copyright 2024 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import {legacyPlugin} from '@web/dev-server-legacy';
 
 const mode = process.env.MODE || 'dev';
