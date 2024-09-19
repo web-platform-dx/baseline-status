@@ -54,13 +54,13 @@ export class BaselineStatus extends LitElement {
   static get styles() {
     return css`
       :host {
-        --color-limited: #ea8600;
-        --color-newly: #1a73e8;
-        --color-widely: #1e8e3e;
-        --color-no_data: #707070;
-        --color-outline: #d9d9d9;
-        --color-text: #000;
-        --color-link: #1a73e8;
+        --color-limited: light-dark(#ea8600, #f09418);
+        --color-newly: light-dark(#1a73e8, #4185ff);
+        --color-widely: light-dark(#1e8e3e, #24a446);
+        --color-no_data: light-dark(#707070, #868686);
+        --color-outline: light-dark(#d9d9d9, #d9d9d9);
+        --color-text: light-dark(#000, #fff);
+        --color-link: light-dark(#1a73e8, #5aa1ff);
 
         color: var(--color-text);
         display: block;
@@ -71,20 +71,6 @@ export class BaselineStatus extends LitElement {
         font-family: Roboto, sans-serif;
         font-size: 14px;
         font-style: normal;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :host {
-          --color-limited: #f09418;
-          --color-newly: #4185ff;
-          --color-widely: #24a446;
-          --color-no_data: #868686;
-
-          --color-outline: #d9d9d9;
-          --color-text: #fff;
-          --color-background: #121212;
-          --color-link: #5aa1ff;
-        }
       }
 
       h1 {
