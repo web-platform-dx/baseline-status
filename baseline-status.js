@@ -54,17 +54,17 @@ export class BaselineStatus extends LitElement {
   static get styles() {
     return css`
       :host {
-        --color-limited: #ea8600;
-        --color-newly: #1a73e8;
-        --color-widely: #1e8e3e;
-        --color-no_data: #707070;
-        --color-outline: #d9d9d9;
-        --color-text: #000;
-        --color-link: #1a73e8;
+        --baseline-status-color-limited: #ea8600;
+        --baseline-status-color-newly: #1a73e8;
+        --baseline-status-color-widely: #1e8e3e;
+        --baseline-status-color-no_data: #707070;
+        --baseline-status-color-outline: #d9d9d9;
+        --baseline-status-color-text: #000;
+        --baseline-status-color-link: #1a73e8;
 
-        color: var(--color-text);
+        color: var(--baseline-status-color-text);
         display: block;
-        border: solid 1px var(--color-outline);
+        border: solid 1px var(--baseline-status-color-outline);
         border-radius: 8px;
         padding: 16px 24px 0 24px;
         max-width: 800px;
@@ -75,15 +75,15 @@ export class BaselineStatus extends LitElement {
 
       @media (prefers-color-scheme: dark) {
         :host {
-          --color-limited: #f09418;
-          --color-newly: #4185ff;
-          --color-widely: #24a446;
-          --color-no_data: #868686;
+          --baseline-status-color-limited: #f09418;
+          --baseline-status-color-newly: #4185ff;
+          --baseline-status-color-widely: #24a446;
+          --baseline-status-color-no_data: #868686;
 
-          --color-outline: #d9d9d9;
-          --color-text: #fff;
-          --color-background: #121212;
-          --color-link: #5aa1ff;
+          --baseline-status-color-outline: #d9d9d9;
+          --baseline-status-color-text: #fff;
+          --baseline-status-color-background: #121212;
+          --baseline-status-color-link: #5aa1ff;
         }
       }
 
@@ -96,7 +96,7 @@ export class BaselineStatus extends LitElement {
       a,
       a:active,
       a:visited {
-        color: var(--color-link);
+        color: var(--baseline-status-color-link);
       }
 
       ::slotted(*) {
@@ -147,20 +147,20 @@ export class BaselineStatus extends LitElement {
       }
 
       .support-no_data {
-        color: var(--color-no_data);
+        color: var(--baseline-status-color-no_data);
       }
 
       .support-unavailable {
-        color: var(--color-limited);
+        color: var(--baseline-status-color-limited);
       }
 
       .support-newly {
-        color: var(--color-newly);
+        color: var(--baseline-status-color-newly);
       }
 
       .support-widely,
       .support-available {
-        color: var(--color-widely);
+        color: var(--baseline-status-color-widely);
       }
 
       details > summary .open-icon {
