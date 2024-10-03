@@ -3,7 +3,7 @@
 A widget displaying Baseline status of a web feature based on
 https://github.com/web-platform-dx/web-features data
 
-<img width="859" alt="baseline_widget_example" src="https://github.com/GoogleChrome/baseline-status/assets/1914261/3171ee2d-6949-47c9-8328-b79e467813f7">
+<img width="859" alt="baseline_widget_example" src="https://github.com/web-platform-dx/baseline-status/assets/1914261/3171ee2d-6949-47c9-8328-b79e467813f7">
 
 ## Example
 
@@ -24,10 +24,10 @@ Install
 npm install baseline-status
 ```
 
-See [docs](https://github.com/GoogleChrome/baseline-status/blob/main/docs/index.html)
+See [docs](https://github.com/web-platform-dx/baseline-status/blob/main/docs/index.html)
 for example usage in HTML.
 
-See [rollup.config.js](https://github.com/GoogleChrome/baseline-status/blob/main/rollup.config.js)
+See [rollup.config.js](https://github.com/web-platform-dx/baseline-status/blob/main/rollup.config.js)
 for an example of a bundler configuration.
 
 *Option 2: Precompiled from e.g. CDN.*

@@ -24,9 +24,6 @@ snapshots["Baseline-status renders with default values"] =
       class="baseline-status-title"
     >
       <div>
-        <strong>
-          Baseline
-        </strong>
         Unknown availability
       </div>
       <div class="baseline-status-browsers">
@@ -162,7 +159,10 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
         devices or browsers.
   </p>
   <p>
-    <a href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml">
+    <a
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      target="_top"
+    >
       Learn more
     </a>
   </p>
@@ -175,7 +175,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
   Arrays (initial support)
 </h1>
 <details>
-  <summary aria-label="Baseline: Widely Available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+  <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
     <baseline-icon
       aria-hidden="true"
       support="widely"
@@ -189,7 +189,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
         <strong>
           Baseline
         </strong>
-        Widely Available
+        Widely available
       </div>
       <div class="baseline-status-browsers">
         <span>
@@ -222,7 +222,10 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
         since July 2015
   </p>
   <p>
-    <a href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml">
+    <a
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      target="_top"
+    >
       Learn more
     </a>
   </p>
@@ -246,9 +249,6 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
       class="baseline-status-title"
     >
       <div>
-        <strong>
-          Baseline
-        </strong>
         Unknown availability
       </div>
       <div class="baseline-status-browsers">
