@@ -54,13 +54,13 @@ export class BaselineStatus extends LitElement {
   static get styles() {
     return css`
       :host {
-        --baseline-status-color-limited: #ea8600;
-        --baseline-status-color-newly: #1a73e8;
-        --baseline-status-color-widely: #1e8e3e;
-        --baseline-status-color-no_data: #707070;
-        --baseline-status-color-outline: #d9d9d9;
-        --baseline-status-color-text: #000;
-        --baseline-status-color-link: #1a73e8;
+        --baseline-status-color-limited: light-dark(#ea8600, #f09418);
+        --baseline-status-color-newly: light-dark(#1a73e8, #4185ff);
+        --baseline-status-color-widely: light-dark(#1e8e3e, #24a446);
+        --baseline-status-color-no_data: light-dark(#707070, #868686);
+        --baseline-status-color-outline: light-dark(#d9d9d9, #d9d9d9);
+        --baseline-status-color-text: light-dark(#000, #fff);
+        --baseline-status-color-link: light-dark(#1a73e8, #5aa1ff);
 
         color: var(--baseline-status-color-text);
         display: block;
@@ -71,20 +71,6 @@ export class BaselineStatus extends LitElement {
         font-family: Roboto, sans-serif;
         font-size: 14px;
         font-style: normal;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :host {
-          --baseline-status-color-limited: #f09418;
-          --baseline-status-color-newly: #4185ff;
-          --baseline-status-color-widely: #24a446;
-          --baseline-status-color-no_data: #868686;
-
-          --baseline-status-color-outline: #d9d9d9;
-          --baseline-status-color-text: #fff;
-          --baseline-status-color-background: #121212;
-          --baseline-status-color-link: #5aa1ff;
-        }
       }
 
       h1 {
