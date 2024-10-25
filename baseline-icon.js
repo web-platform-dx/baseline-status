@@ -44,25 +44,13 @@ export default class BaselineIcon extends LitElement {
   static get styles() {
     return css`
       :host {
-        --baseline-icon-limited-front: #f09409;
-        --baseline-icon-limited-back: #c6c6c6;
-        --baseline-icon-widely-front: #1ea446;
-        --baseline-icon-widely-back: #c4eed0;
-        --baseline-icon-newly-front: #1b6ef3;
-        --baseline-icon-newly-back: #a8c7fa;
-        --baseline-icon-no_data: #909090;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :host {
-          --baseline-icon-limited-front: #f09409;
-          --baseline-icon-limited-back: #565656;
-          --baseline-icon-widely-front: #1ea446;
-          --baseline-icon-widely-back: #125225;
-          --baseline-icon-newly-front: #4185ff;
-          --baseline-icon-newly-back: #2d509e;
-          --baseline-icon-no_data: #666666;
-        }
+        --baseline-icon-limited-front: light-dark(#f09409, #f09409);
+        --baseline-icon-limited-back: light-dark(#c6c6c6, #565656);
+        --baseline-icon-widely-front: light-dark(#1ea446, #1ea446);
+        --baseline-icon-widely-back: light-dark(#c4eed0, #125225);
+        --baseline-icon-newly-front: light-dark(#1b6ef3, #4185ff);
+        --baseline-icon-newly-back: light-dark(#a8c7fa, #2d509e);
+        --baseline-icon-no_data: light-dark(#909090, #666666);
       }
 
       :host {
