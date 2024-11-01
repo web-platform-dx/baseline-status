@@ -46,11 +46,12 @@ It can be used for quick testing and prototyping.
 
 ## Development
 
-Run locally:
+To run locally:
 
-```
-npm run serve
-```
+1. Clone the repository.
+2. Install dependencies: `npm install`.
+3. Start dev server: `npm run serve`.
+4. Open demo page at http://localhost:8000/docs.
 
 The local server uses wds [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) package.
 To enable web component related polyfills for legacy browsers, it uses `@web/dev-server-legacy` package.
