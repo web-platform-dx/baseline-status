@@ -59,10 +59,9 @@ export class BaselineStatus extends LitElement {
         --baseline-status-color-widely: light-dark(#1e8e3e, #24a446);
         --baseline-status-color-no_data: light-dark(#707070, #868686);
         --baseline-status-color-outline: light-dark(#d9d9d9, #d9d9d9);
-        --baseline-status-color-text: light-dark(#000, #fff);
         --baseline-status-color-link: light-dark(#1a73e8, #5aa1ff);
 
-        color: var(--baseline-status-color-text);
+        color: inherit;
         display: block;
         border: solid 1px var(--baseline-status-color-outline);
         border-radius: 8px;
@@ -153,7 +152,7 @@ export class BaselineStatus extends LitElement {
         width: 10px;
         height: 20px;
         margin-left: auto;
-        color: var(--text-color);
+        color: inherit;
       }
 
       @media (min-width: 420px) {
