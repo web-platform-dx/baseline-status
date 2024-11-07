@@ -162,7 +162,7 @@ export class BaselineStatus extends LitElement {
       }
 
       details > summary .open-icon svg {
-        transition: all 0.3s;
+        transition: transform 0.3s;
       }
 
       details[open] summary .open-icon svg {
