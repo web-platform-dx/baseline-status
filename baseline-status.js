@@ -350,8 +350,6 @@ export class BaselineStatus extends LitElement {
       error: () => this.renderTemplate(missingFeature),
     });
   }
-
-  up
 }
 
 window.customElements.define('baseline-status', BaselineStatus);
