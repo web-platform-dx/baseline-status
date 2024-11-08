@@ -307,34 +307,35 @@ export class BaselineStatus extends LitElement {
     switch (this.heading.toLowerCase()) {
       case '1':
       case 'h1':
-        heading = `<h1>${feature.name}</h1>`
+        heading = html`<h1>${feature.name}</h1>`
         break;
       case '2':
       case 'h2':
-        heading = `<h2>${feature.name}</h2>`
+        heading = html`<h2>${feature.name}</h2>`
         break;
       case '3':
       case 'h3':
-        heading = `<h3>${feature.name}</h3>`
+        heading = html`<h3>${feature.name}</h3>`
         break;
       case '4':
       case 'h4':
-        heading = `<h4>${feature.name}</h4>`
+        heading = html`<h4>${feature.name}</h4>`
         break;
       case '5':
       case 'h5':
-        heading = `<h5>${feature.name}</h5>`
+        heading = html`<h5>${feature.name}</h5>`
         break;
       case '6':
       case 'h6':
-        heading = `<h6>${feature.name}</h6>`
+        heading = html`<h6>${feature.name}</h6>`
         break;
       default:
-        heading = `<h2>${feature.name}</h2>`
+        heading = html`<h2>${feature.name}</h2>`
         break;
     }
 
-    return html` ${unsafeHTML(heading)}
+    return html` 
+      ${heading}
       <details>
         <summary
           aria-label="${getAriaLabel(
