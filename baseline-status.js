@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { Task } from '@lit/task';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+
 // eslint-disable-next-line no-unused-vars
 import BaselineIcon from './baseline-icon.js';
 
@@ -72,7 +74,7 @@ export class BaselineStatus extends LitElement {
         font-style: normal;
       }
 
-      h1 {
+      h1,h2,h3,h4,h5,h6 {
         font-weight: normal;
         font-size: 20px;
         margin: 0;
@@ -194,7 +196,18 @@ export class BaselineStatus extends LitElement {
        * @type {string}
        */
       featureId: { type: String },
+      /**
+       * Heading level to use for the feature title.
+       * @type {string}
+       * @default "2"
+       */
+      heading: { type: String },
     };
+  }
+
+  constructor() {
+    super();
+    this.heading = '2';
   }
 
   fetchData = new Task(this, {
@@ -290,7 +303,38 @@ export class BaselineStatus extends LitElement {
       return `Baseline: ${title}${year ? ` ${year}` : ''}${badge ? ` (newly available)` : ''}. Supported in Chrome: ${chrome === 'available' ? 'yes' : chrome}. Supported in Edge: ${edge === 'available' ? 'yes' : edge}. Supported in Firefox: ${firefox === 'available' ? 'yes' : firefox}. Supported in Safari: ${safari === 'available' ? 'yes' : safari}.`;
     };
 
-    return html` <h1>${feature.name}</h1>
+    let heading;
+    switch (this.heading.toLowerCase()) {
+      case '1':
+      case 'h1':
+        heading = `<h1>${feature.name}</h1>`
+        break;
+      case '2':
+      case 'h2':
+        heading = `<h2>${feature.name}</h2>`
+        break;
+      case '3':
+      case 'h3':
+        heading = `<h3>${feature.name}</h3>`
+        break;
+      case '4':
+      case 'h4':
+        heading = `<h4>${feature.name}</h4>`
+        break;
+      case '5':
+      case 'h5':
+        heading = `<h5>${feature.name}</h5>`
+        break;
+      case '6':
+      case 'h6':
+        heading = `<h6>${feature.name}</h6>`
+        break;
+      default:
+        heading = `<h2>${feature.name}</h2>`
+        break;
+    }
+
+    return html` ${unsafeHTML(heading)}
       <details>
         <summary
           aria-label="${getAriaLabel(

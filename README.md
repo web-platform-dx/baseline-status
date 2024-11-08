@@ -14,6 +14,15 @@ Show Baseline status widget for
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
 
+By default, the heading level is `<h2>`. You can change this with the `heading`
+attribute:
+
+```
+<baseline-status featureId="calc-size" heading="3"></baseline-status>
+```
+Heading levels from `"1"` to `"6"` and `"h1"` to `"h6"` are supported. This only
+changes the semantic level, and not the styling.
+
 ## Usage
 
 *Option 1. Install and bundle with your application*
