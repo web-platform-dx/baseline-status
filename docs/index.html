@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
@@ -25,5 +25,15 @@
     <baseline-status featureId="abs-sign"></baseline-status>
     <baseline-status featureid="i-dont-exist"></baseline-status>
     <baseline-status></baseline-status>
+    <label for="dynamic-feature-input">Feature id</label>
+    <input type="text" id="dynamic-feature-input" />
+    <baseline-status id="dynamic-feature-output"></baseline-status>
+    <script>
+      const input = document.getElementById("dynamic-feature-input");
+      const output = document.getElementById("dynamic-feature-output");
+      input.addEventListener("change", (event) => {
+        output.setAttribute("featureId", event.target.value);
+      });
+    </script>
   </body>
 </html>
