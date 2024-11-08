@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
 import { Task } from '@lit/task';
-import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 // eslint-disable-next-line no-unused-vars
 import BaselineIcon from './baseline-icon.js';
