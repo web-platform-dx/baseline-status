@@ -198,16 +198,15 @@ export class BaselineStatus extends LitElement {
   }
 
   fetchData = new Task(this, {
-    // eslint-disable-next-line no-unused-vars
     task: async ([featureId], { signal }) => {
-      const url = API_ENDPOINT + this.featureId;
+      const url = API_ENDPOINT + featureId;
       const response = await fetch(url, { signal, cache: 'force-cache' });
       if (!response.ok) {
         throw new Error(response.status);
       }
       return response.json();
     },
-    args: () => ['_'],
+    args: () => [this.featureId],
   });
 
   renderSupportIcon(baseline, browserImplementation) {
