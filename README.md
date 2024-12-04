@@ -40,7 +40,7 @@ the packages
 It can be used for quick testing and prototyping.
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/baseline-status@1.0.8/baseline-status.min.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
 
