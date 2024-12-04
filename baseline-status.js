@@ -72,7 +72,7 @@ export class BaselineStatus extends LitElement {
         font-style: normal;
       }
 
-      h1 {
+      .name {
         font-weight: normal;
         font-size: 20px;
         margin: 0;
@@ -289,7 +289,7 @@ export class BaselineStatus extends LitElement {
       return `Baseline: ${title}${year ? ` ${year}` : ''}${badge ? ` (newly available)` : ''}. Supported in Chrome: ${chrome === 'available' ? 'yes' : chrome}. Supported in Edge: ${edge === 'available' ? 'yes' : edge}. Supported in Firefox: ${firefox === 'available' ? 'yes' : firefox}. Supported in Safari: ${safari === 'available' ? 'yes' : safari}.`;
     };
 
-    return html` <h1>${feature.name}</h1>
+    return html` <div class="name">${feature.name}</div>
       <details>
         <summary
           aria-label="${getAriaLabel(
