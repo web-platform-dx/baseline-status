@@ -9,9 +9,9 @@
 export const snapshots = {};
 
 snapshots["Baseline-status renders with default values"] = 
-`<h1>
+`<div class="name">
   Unknown feature
-</h1>
+</div>
 <details>
   <summary aria-label="Baseline: Unknown availability. Supported in Chrome: unknown. Supported in Edge: unknown. Supported in Firefox: unknown. Supported in Safari: unknown.">
     <baseline-icon
@@ -105,9 +105,9 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
 snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
-`<h1>
+`<div class="name">
   accent-color
-</h1>
+</div>
 <details>
   <summary aria-label="Baseline:  2022 (newly available). Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
     <baseline-icon
@@ -171,9 +171,9 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
 snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
-`<h1>
+`<div class="name">
   Arrays (initial support)
-</h1>
+</div>
 <details>
   <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
     <baseline-icon
@@ -234,9 +234,9 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
 /* end snapshot Baseline-status renders baseline-high widget for an existing feature */
 
 snapshots["Baseline-status renders default widget for an unexisting feature"] = 
-`<h1>
+`<div class="name">
   i-dont-exist
-</h1>
+</div>
 <details>
   <summary aria-label="Baseline: Unknown availability. Supported in Chrome: unknown. Supported in Edge: unknown. Supported in Firefox: unknown. Supported in Safari: unknown.">
     <baseline-icon
