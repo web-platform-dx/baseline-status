@@ -6,7 +6,7 @@
   "type": "module",
   "module": "baseline-status.js",
   "scripts": {
-    "serve": "rollup -c && wds --watch",
+    "serve": "concurrently \"rollup -c --watch\" \"wds --watch\"",
     "test": "wtr test/**/*.test.js --node-resolve",
     "test:update": "wtr test/**/*.test.js --node-resolve --update-snapshots"
   },
