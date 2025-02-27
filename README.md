@@ -14,6 +14,10 @@ Show Baseline status widget for
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
 
+Feature IDs come from the [github.com/web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/tree/main/features) repo. 
+
+Alternatively, you can find the feature ID by browsing the [webstatus.dev](https://webstatus.dev/) site and reading the ID from the URL. E.g. for `Intl.ListFormat` feature the page URL is `https://webstatus.dev/features/intl-list-format`, so the ID for this feature is `intl-list-format`.
+
 ## Usage
 
 *Option 1. Install and bundle with your application*
