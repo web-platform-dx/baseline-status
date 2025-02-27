@@ -13,6 +13,9 @@ Show Baseline status widget for
 ```
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
+## Data source
+
+The widget fetches data from the Web Features API endpoint: `https://api.webstatus.dev/v1/features/` which exposes data from the [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/) project.
 
 Feature IDs come from the [github.com/web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/tree/main/features) repo. 
 
