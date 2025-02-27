@@ -6,7 +6,7 @@
   "type": "module",
   "module": "baseline-status.js",
   "scripts": {
-    "serve": "rollup -c && wds --watch",
+    "serve": "concurrently \"rollup -c --watch\" \"wds --watch\"",
     "test": "wtr test/**/*.test.js --node-resolve",
     "test:update": "wtr test/**/*.test.js --node-resolve --update-snapshots"
   },
@@ -27,6 +27,7 @@
     "@web/dev-server-legacy": "^2.1.1",
     "@web/rollup-plugin-html": "^2.3.0",
     "@web/test-runner": "^0.18.2",
+    "concurrently": "^9.1.1",
     "eslint": "^9.3.0",
     "eslint-plugin-mocha": "^10.4.3",
     "globals": "^15.3.0",
