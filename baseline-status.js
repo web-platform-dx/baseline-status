@@ -194,7 +194,17 @@ export class BaselineStatus extends LitElement {
        * @type {string}
        */
       featureId: { type: String },
+      feature_id: { type: String, attribute: 'feature-id' },
     };
+  }
+
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      // Reflect feature-id attribute (feature_id prop) to featureId prop.
+      if (propName === 'feature_id') {
+        this['featureId'] = this.feature_id
+      }
+    });
   }
 
   fetchData = new Task(this, {

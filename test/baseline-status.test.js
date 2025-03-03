@@ -77,6 +77,35 @@ describe('Baseline-status', () => {
     await expect(el).shadowDom.to.equalSnapshot();
   })
 
+  it('renders baseline widget for a feature from feature-id attribute', async () => {
+    window.fetch = async () => {
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({
+          "description": "Arrays are ordered lists of JavaScript values.",
+          "name": "Arrays (initial support)",
+          "baseline": {
+            "status": "widely",
+            "high_date": "2018-01-29",
+            "low_date": "2015-07-29",
+          },
+          "browser_implementations": {
+            "chrome": "93",
+            "chrome_android": "93",
+            "edge": "93",
+            "firefox": "92",
+            "firefox_android": "92",
+            "safari": "15.4",
+            "safari_ios": "15.4"
+          }
+        })
+      }
+    }
+    const el = await fixture(html`<baseline-status featureId="array"></baseline-status>`);
+    await expect(el).shadowDom.to.equalSnapshot();
+  })
+
 
   it('renders default widget for an unexisting feature', async () => {
     window.fetch = () => {
