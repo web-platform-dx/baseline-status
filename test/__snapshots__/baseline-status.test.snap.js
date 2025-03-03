@@ -8,7 +8,7 @@
 
 export const snapshots = {};
 
-snapshots["Baseline-status renders with default values"] = 
+snapshots["Baseline-status renders with default values"] =
 `<div class="name">
   Unknown feature
 </div>
@@ -104,7 +104,7 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 `;
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
-snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
+snapshots["Baseline-status renders baseline-low widget for an existing feature"] =
 `<div class="name">
   accent-color
 </div>
@@ -170,7 +170,7 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
 `;
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
-snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
+snapshots["Baseline-status renders baseline-high widget for an existing feature"] =
 `<div class="name">
   Arrays (initial support)
 </div>
@@ -233,7 +233,7 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
 `;
 /* end snapshot Baseline-status renders baseline-high widget for an existing feature */
 
-snapshots["Baseline-status renders default widget for an unexisting feature"] = 
+snapshots["Baseline-status renders default widget for an unexisting feature"] =
 `<div class="name">
   i-dont-exist
 </div>
@@ -325,4 +325,67 @@ snapshots["Baseline-status renders loading status while api call is in flight"] 
 </details>
 `;
 /* end snapshot Baseline-status renders loading status while api call is in flight */
+
+snapshots["Baseline-status renders baseline widget for a feature from feature-id attribute"] =
+`<div class="name">
+  Arrays (initial support)
+</div>
+<details>
+  <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+    <baseline-icon
+      aria-hidden="true"
+      support="widely"
+    >
+    </baseline-icon>
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
+      <div>
+        <strong>
+          Baseline
+        </strong>
+        Widely available
+      </div>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
+    </span>
+  </summary>
+  <p>
+    This feature is well established and works across many
+        devices and browser versions. It’s been available across browsers
+        since July 2015
+  </p>
+  <p>
+    <a
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      target="_top"
+    >
+      Learn more
+    </a>
+  </p>
+</details>
+`;
+/* end snapshot Baseline-status renders baseline widget for a feature from feature-id attribute */
 
