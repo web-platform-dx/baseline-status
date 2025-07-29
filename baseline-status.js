@@ -305,14 +305,14 @@ export class BaselineStatus extends LitElement {
       <details>
         <summary
           aria-label="${getAriaLabel(
-      title,
-      year,
-      badge,
-      chrome?.status,
-      edge?.status,
-      firefox?.status,
-      safari?.status,
-    )}"
+            title,
+            year,
+            badge,
+            chrome?.status,
+            edge?.status,
+            firefox?.status,
+            safari?.status,
+          )}"
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
