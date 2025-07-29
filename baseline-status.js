@@ -106,6 +106,7 @@ export class BaselineStatus extends LitElement {
         display: flex;
         align-items: center;
         gap: 0.2rem;
+        line-height: normal;
       }
 
       .baseline-badge {
@@ -151,6 +152,7 @@ export class BaselineStatus extends LitElement {
       details > summary .open-icon {
         width: 10px;
         height: 20px;
+        line-height: normal;
         margin-left: auto;
         color: inherit;
       }
@@ -303,14 +305,14 @@ export class BaselineStatus extends LitElement {
       <details>
         <summary
           aria-label="${getAriaLabel(
-            title,
-            year,
-            badge,
-            chrome?.status,
-            edge?.status,
-            firefox?.status,
-            safari?.status,
-          )}"
+      title,
+      year,
+      badge,
+      chrome?.status,
+      edge?.status,
+      firefox?.status,
+      safari?.status,
+    )}"
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
