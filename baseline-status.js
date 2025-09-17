@@ -212,7 +212,14 @@ export class BaselineStatus extends LitElement {
       const url = API_ENDPOINT + featureId;
       const response = await fetch(url, { signal, cache: 'force-cache' });
       if (!response.ok) {
+        if (response.status === 410) {
+          console.warn(`baseline-status: ${featureId} data has been removed or split. Update your featureId.`);
+        }
         throw new Error(response.status);
+      }
+      if (response.redirected) {
+        const newId = new URL(response.url).pathname.split("/").at(-1);
+        console.warn(`baseline-status: ${featureId} is now ${newId}. Update your featureId.`);
       }
       return response.json();
     },
