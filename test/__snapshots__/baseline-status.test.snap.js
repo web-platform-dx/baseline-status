@@ -389,3 +389,61 @@ snapshots["Baseline-status renders baseline widget for a feature from feature-id
 `;
 /* end snapshot Baseline-status renders baseline widget for a feature from feature-id attribute */
 
+snapshots["Baseline-status renders limited availability correctly when mobile support is missing"] = 
+`<div class="name">
+  paint-order
+</div>
+<details>
+  <summary aria-label="Baseline: Limited availability. Supported in Chrome: yes. Supported in Edge: yes. Supported in Firefox: yes. Supported in Safari: no.">
+    <baseline-icon
+      aria-hidden="true"
+      support="limited"
+    >
+    </baseline-icon>
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
+      <div>
+        Limited availability
+      </div>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-available">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-available">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-available">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-unavailable">
+          </browser-support-icon>
+        </span>
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
+    </span>
+  </summary>
+  <p>
+    This feature is not Baseline because it does not work in some of the most widely-used browsers.
+  </p>
+  <p>
+    <a
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      target="_top"
+    >
+      Learn more
+    </a>
+  </p>
+</details>
+`;
+/* end snapshot Baseline-status renders limited availability correctly when mobile support is missing */
+

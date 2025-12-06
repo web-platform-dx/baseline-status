@@ -1,6 +1,6 @@
-import {BaselineStatus} from '../baseline-status';
-import {expect, fixture, assert} from '@open-wc/testing';
-import {html} from 'lit/static-html.js';
+import { BaselineStatus } from '../baseline-status';
+import { expect, fixture, assert } from '@open-wc/testing';
+import { html } from 'lit/static-html.js';
 
 describe('Baseline-status', () => {
 
@@ -116,6 +116,34 @@ describe('Baseline-status', () => {
       }
     }
     const el = await fixture(html`<baseline-status featureId="i-dont-exist"></baseline-status>`);
+    await expect(el).shadowDom.to.equalSnapshot();
+  })
+
+
+  it('renders limited availability correctly when mobile support is missing', async () => {
+    window.fetch = async () => {
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({
+          "name": "paint-order",
+          "baseline": {
+            "status": "limited"
+          },
+          "browser_implementations": {
+            "chrome": { status: "available" },
+            "chrome_android": { status: "available" },
+            "edge": { status: "available" },
+            "firefox": { status: "available" },
+            "firefox_android": { status: "available" },
+            "safari": { status: "available" }
+            // safari_ios unavailable
+          }
+        })
+      }
+    }
+    const el = await fixture(html`<baseline-status featureId="paint-order"></baseline-status>`);
+
     await expect(el).shadowDom.to.equalSnapshot();
   })
 });
