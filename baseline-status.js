@@ -240,9 +240,14 @@ export class BaselineStatus extends LitElement {
     args: () => [this.featureId],
   });
 
-  renderSupportIcon(baseline, browserImplementation) {
+  checkAvailability(implementations) {
+    return implementations.every((impl) => impl?.status === 'available');
+  }
+
+  renderSupportIcon(baseline, implementations) {
+    const allAvailable = this.checkAvailability(implementations);
     const support = (baseline === 'limited')
-      ? (browserImplementation?.status || 'unavailable')
+      ? (allAvailable ? 'available' : 'unavailable')
       : baseline;
     const icon = (support === 'newly' || support === 'widely')
       ? 'available'
@@ -302,7 +307,7 @@ export class BaselineStatus extends LitElement {
       baselineDate.split(' ')[1] :
       '';
 
-    const { chrome, edge, firefox, safari } =
+    const { chrome, chrome_android, edge, firefox, firefox_android, safari, safari_ios } =
       feature.browser_implementations || {};
 
     const { link, upvotes } = feature.developer_signals || {};
@@ -322,6 +327,8 @@ export class BaselineStatus extends LitElement {
       return `Baseline: ${title}${year ? ` ${year}` : ''}${badge ? ` (newly available)` : ''}. Supported in Chrome: ${chrome === 'available' ? 'yes' : chrome}. Supported in Edge: ${edge === 'available' ? 'yes' : edge}. Supported in Firefox: ${firefox === 'available' ? 'yes' : firefox}. Supported in Safari: ${safari === 'available' ? 'yes' : safari}.`;
     };
 
+    const getStatus = (impls) => this.checkAvailability(impls) ? 'available' : 'no';
+
     return html` <div class="name">${feature.name}</div>
       <details>
         <summary
@@ -329,10 +336,10 @@ export class BaselineStatus extends LitElement {
             title,
             year,
             badge,
-            chrome?.status,
-            edge?.status,
-            firefox?.status,
-            safari?.status,
+            getStatus([chrome, chrome_android]),
+            getStatus([edge]),
+            getStatus([firefox, firefox_android]),
+            getStatus([safari, safari_ios]),
           )}"
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
@@ -342,10 +349,10 @@ export class BaselineStatus extends LitElement {
               ${link ? html`<a class="signals-badge" href="${link}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : ''}
             </div>
             <div class="baseline-status-browsers">
-              <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, chrome)}</span>
-              <span>${ICONS['edge']} ${this.renderSupportIcon(baseline, edge)}</span>
-              <span>${ICONS['firefox']} ${this.renderSupportIcon(baseline, firefox)}</span>
-              <span>${ICONS['safari']} ${this.renderSupportIcon(baseline, safari)}</span>
+              <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, [chrome, chrome_android])}</span>
+              <span>${ICONS['edge']} ${this.renderSupportIcon(baseline, [edge])}</span>
+              <span>${ICONS['firefox']} ${this.renderSupportIcon(baseline, [firefox, firefox_android])}</span>
+              <span>${ICONS['safari']} ${this.renderSupportIcon(baseline, [safari, safari_ios])}</span>
             </div>
           </div>
         </div>
