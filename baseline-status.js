@@ -339,7 +339,7 @@ export class BaselineStatus extends LitElement {
           <div class="baseline-status-title" aria-hidden="true">
             <div>
               ${preTitle} ${title} ${year} ${badge}
-              ${link ? html`<a class="signals-badge" href="${link}" target="_top" @click="${(e) => e.stopPropagation()}" title="Upvote this feature on GitHub">👍 ${upvotes || 0}</a>` : ''}
+              ${link ? html`<a class="signals-badge" href="${link}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : ''}
             </div>
             <div class="baseline-status-browsers">
               <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, chrome)}</span>
