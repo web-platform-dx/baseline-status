@@ -183,6 +183,27 @@ export class BaselineStatus extends LitElement {
       summary::-webkit-details-marker {
         display: none;
       }
+
+      .signals-badge,
+      .signals-badge:visited,
+      .signals-badge:active {
+        text-decoration: none;
+        background: transparent;
+        color: inherit;
+        border-radius: 12px;
+        padding: 2px 8px;
+        font-size: 12px;
+        border: 1px solid var(--baseline-status-color-outline);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: 8px;
+        line-height: 1.4;
+      }
+
+      .signals-badge:hover {
+        background: light-dark(#f5f5f5, #333);
+      }
     `;
   }
 
@@ -284,6 +305,8 @@ export class BaselineStatus extends LitElement {
     const { chrome, edge, firefox, safari } =
       feature.browser_implementations || {};
 
+    const { link, upvotes } = feature.developer_signals || {};
+
     const getAriaLabel = (
       title,
       year,
@@ -314,7 +337,10 @@ export class BaselineStatus extends LitElement {
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
-            <div>${preTitle} ${title} ${year} ${badge}</div>
+            <div>
+              ${preTitle} ${title} ${year} ${badge}
+              ${link ? html`<a class="signals-badge" href="${link}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : ''}
+            </div>
             <div class="baseline-status-browsers">
               <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, chrome)}</span>
               <span>${ICONS['edge']} ${this.renderSupportIcon(baseline, edge)}</span>
