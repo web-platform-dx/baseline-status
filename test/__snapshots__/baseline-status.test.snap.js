@@ -447,3 +447,74 @@ snapshots["Baseline-status renders limited availability correctly when mobile su
 `;
 /* end snapshot Baseline-status renders limited availability correctly when mobile support is missing */
 
+snapshots["Baseline-status renders upvote button when developer signals are present"] = 
+`<div class="name">
+  grid
+  <a
+    class="signals-badge"
+    href="https://example.com/upvote"
+    target="_top"
+    title="42 developer upvotes. Need this feature across browsers? Click this and upvote it on GitHub."
+  >
+    👍 42
+  </a>
+</div>
+<details>
+  <summary aria-label="Baseline: Widely available. Supported in Chrome: no. Supported in Edge: no. Supported in Firefox: no. Supported in Safari: no.">
+    <baseline-icon
+      aria-hidden="true"
+      support="widely"
+    >
+    </baseline-icon>
+    <div
+      aria-hidden="true"
+      class="baseline-status-title"
+    >
+      <div>
+        <strong>
+          Baseline
+        </strong>
+        Widely available
+      </div>
+      <div class="baseline-status-browsers">
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+        <span>
+          <browser-support-icon class="support-widely">
+          </browser-support-icon>
+        </span>
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      class="open-icon"
+    >
+    </span>
+  </summary>
+  <p>
+    This feature is well established and works across many
+        devices and browser versions. It’s been available across browsers
+        since October 2017
+  </p>
+  <p>
+    <a
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      target="_top"
+    >
+      Learn more
+    </a>
+  </p>
+</details>
+`;
+/* end snapshot Baseline-status renders upvote button when developer signals are present */
+
