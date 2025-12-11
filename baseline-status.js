@@ -76,6 +76,9 @@ export class BaselineStatus extends LitElement {
         font-weight: normal;
         font-size: 20px;
         margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
       a,
@@ -197,7 +200,6 @@ export class BaselineStatus extends LitElement {
         display: inline-flex;
         align-items: center;
         gap: 4px;
-        margin-left: 8px;
         line-height: 1.4;
       }
 
@@ -310,7 +312,9 @@ export class BaselineStatus extends LitElement {
     const { chrome, chrome_android, edge, firefox, firefox_android, safari, safari_ios } =
       feature.browser_implementations || {};
 
-    const { link, upvotes } = feature.developer_signals || {};
+    const { link: upvoteUrl, upvotes } = feature.developer_signals || {};
+
+    const upvoteButton = upvoteUrl ? html`<a class="signals-badge" href="${upvoteUrl}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : '';
 
     const getAriaLabel = (
       title,
@@ -329,7 +333,7 @@ export class BaselineStatus extends LitElement {
 
     const getStatus = (impls) => this.checkAvailability(impls) ? 'available' : 'no';
 
-    return html` <div class="name">${feature.name}</div>
+    return html` <div class="name">${feature.name} ${upvoteButton}</div>
       <details>
         <summary
           aria-label="${getAriaLabel(
@@ -340,14 +344,11 @@ export class BaselineStatus extends LitElement {
             getStatus([edge]),
             getStatus([firefox, firefox_android]),
             getStatus([safari, safari_ios]),
-          )}"
+    )}"
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
           <div class="baseline-status-title" aria-hidden="true">
-            <div>
-              ${preTitle} ${title} ${year} ${badge}
-              ${link ? html`<a class="signals-badge" href="${link}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : ''}
-            </div>
+            <div>${preTitle} ${title} ${year} ${badge}</div>
             <div class="baseline-status-browsers">
               <span>${ICONS['chrome']} ${this.renderSupportIcon(baseline, [chrome, chrome_android])}</span>
               <span>${ICONS['edge']} ${this.renderSupportIcon(baseline, [edge])}</span>

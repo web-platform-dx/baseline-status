@@ -146,4 +146,36 @@ describe('Baseline-status', () => {
 
     await expect(el).shadowDom.to.equalSnapshot();
   })
+
+  it('renders upvote button when developer signals are present', async () => {
+    window.fetch = async () => {
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({
+          "name": "grid",
+          "baseline": {
+            "status": "widely",
+            "high_date": "2017-10-17",
+            "low_date": "2017-10-17"
+          },
+          "browser_implementations": {
+            "chrome": "57",
+            "chrome_android": "57",
+            "edge": "16",
+            "firefox": "52",
+            "firefox_android": "52",
+            "safari": "10.1",
+            "safari_ios": "10.1"
+          },
+          "developer_signals": {
+            "link": "https://example.com/upvote",
+            "upvotes": 42
+          }
+        })
+      }
+    }
+    const el = await fixture(html`<baseline-status featureId="grid"></baseline-status>`);
+    await expect(el).shadowDom.to.equalSnapshot();
+  })
 });
