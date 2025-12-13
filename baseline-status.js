@@ -368,7 +368,7 @@ export class BaselineStatus extends LitElement {
         ${description}
       </p>
       <p>
-        ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml" target="_top">Learn more</a>`}
+        ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml.dist" target="_top">Learn more</a>`}
       </p>
     </details>`;
   }
