@@ -1,5 +1,5 @@
 import { BaselineStatus } from '../baseline-status';
-import { expect, fixture, assert } from '@open-wc/testing';
+import { expect, fixture, assert, aTimeout, waitUntil } from '@open-wc/testing';
 import { html } from 'lit/static-html.js';
 
 describe('Baseline-status', () => {
@@ -18,6 +18,89 @@ describe('Baseline-status', () => {
   it('renders with default values', async () => {
     const el = await fixture(html`<baseline-status></baseline-status>`);
     await expect(el).shadowDom.to.equalSnapshot();
+  })
+
+  it('does not fetch without a feature id', async () => {
+    const requests = [];
+    window.fetch = async (url) => {
+      requests.push(url);
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({})
+      }
+    }
+
+    const el = await fixture(html`<baseline-status></baseline-status>`);
+    await el.updateComplete;
+    // Let any async Task run attempt happen before asserting it did not fetch.
+    await aTimeout(0);
+
+    assert.equal(requests.length, 0);
+  })
+
+  it('does not fetch when feature-id is empty', async () => {
+    const requests = [];
+    window.fetch = async (url) => {
+      requests.push(url);
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({})
+      }
+    }
+
+    const el = await fixture(html`<baseline-status feature-id=""></baseline-status>`);
+    await el.updateComplete;
+    // Let any async Task run attempt happen before asserting it did not fetch.
+    await aTimeout(0);
+
+    assert.equal(requests.length, 0);
+  })
+
+  it('fetches when feature-id is dynamically set and updated', async () => {
+    const requests = [];
+    window.fetch = async (url) => {
+      requests.push(url);
+      return {
+        ok: true,
+        status: 200,
+        json: () => ({
+          "name": "Dynamic feature",
+          "baseline": {
+            "status": "widely",
+            "high_date": "2018-01-29",
+            "low_date": "2015-07-29",
+          },
+          "browser_implementations": {}
+        })
+      }
+    }
+
+    const el = await fixture(html`<baseline-status></baseline-status>`);
+    await el.updateComplete;
+    // Let any async Task run attempt happen before asserting it did not fetch.
+    await aTimeout(0);
+
+    assert.equal(requests.length, 0);
+
+    el.setAttribute('feature-id', 'array');
+    await waitUntil(() => requests.length === 1, 'feature-id set should fetch once');
+
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0], 'https://api.webstatus.dev/v1/features/array');
+
+    el.setAttribute('feature-id', 'anchor-positioning');
+    await waitUntil(() => requests.length === 2, 'feature-id update should fetch again');
+
+    assert.equal(requests.length, 2);
+    assert.equal(requests[1], 'https://api.webstatus.dev/v1/features/anchor-positioning');
+
+    el.setAttribute('feature-id', '');
+    // Clearing feature-id should not schedule another request.
+    await aTimeout(0);
+
+    assert.equal(requests.length, 2);
   })
 
   it('renders baseline-low widget for an existing feature', async () => {
@@ -102,7 +185,7 @@ describe('Baseline-status', () => {
         })
       }
     }
-    const el = await fixture(html`<baseline-status featureId="array"></baseline-status>`);
+    const el = await fixture(html`<baseline-status feature-id="array"></baseline-status>`);
     await expect(el).shadowDom.to.equalSnapshot();
   })
 

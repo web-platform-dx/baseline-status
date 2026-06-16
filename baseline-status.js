@@ -221,17 +221,24 @@ export class BaselineStatus extends LitElement {
     };
   }
 
-  updated(changedProperties) {
+  willUpdate(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
       // Reflect feature-id attribute (feature_id prop) to featureId prop.
       if (propName === 'feature_id') {
-        this['featureId'] = this.feature_id
+        this['featureId'] = this.normalizeFeatureId(this.feature_id);
       }
     });
   }
 
+  normalizeFeatureId(featureId) {
+    return typeof featureId === 'string' ? featureId.trim() : featureId;
+  }
+
   fetchData = new Task(this, {
     task: async ([featureId], { signal }) => {
+      if (!featureId) {
+        return undefined;
+      }
       const url = API_ENDPOINT + featureId;
       const response = await fetch(url, { signal, cache: 'force-cache' });
       if (!response.ok) {
@@ -239,7 +246,7 @@ export class BaselineStatus extends LitElement {
       }
       return response.json();
     },
-    args: () => [this.featureId],
+    args: () => [this.normalizeFeatureId(this.featureId)],
   });
 
   checkAvailability(implementations) {
