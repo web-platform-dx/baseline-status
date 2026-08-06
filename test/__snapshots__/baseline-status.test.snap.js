@@ -104,7 +104,7 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 `;
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
-snapshots["Baseline-status renders baseline-low widget for an existing feature"] =
+snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
 `<div class="name">
   accent-color
 </div>
@@ -160,17 +160,17 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
   </p>
   <p>
     <a
-      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml.dist"
       target="_top"
     >
-      Learn more
+      Compatibility data
     </a>
   </p>
 </details>
 `;
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
-snapshots["Baseline-status renders baseline-high widget for an existing feature"] =
+snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
 `<div class="name">
   Arrays (initial support)
 </div>
@@ -223,10 +223,10 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
   </p>
   <p>
     <a
-      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml.dist"
       target="_top"
     >
-      Learn more
+      Compatibility data
     </a>
   </p>
 </details>
@@ -326,7 +326,7 @@ snapshots["Baseline-status renders loading status while api call is in flight"] 
 `;
 /* end snapshot Baseline-status renders loading status while api call is in flight */
 
-snapshots["Baseline-status renders baseline widget for a feature from feature-id attribute"] =
+snapshots["Baseline-status renders baseline widget for a feature from feature-id attribute"] = 
 `<div class="name">
   Arrays (initial support)
 </div>
@@ -379,10 +379,10 @@ snapshots["Baseline-status renders baseline widget for a feature from feature-id
   </p>
   <p>
     <a
-      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml.dist"
       target="_top"
     >
-      Learn more
+      Compatibility data
     </a>
   </p>
 </details>
@@ -437,10 +437,10 @@ snapshots["Baseline-status renders limited availability correctly when mobile su
   </p>
   <p>
     <a
-      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml.dist"
       target="_top"
     >
-      Learn more
+      Compatibility data
     </a>
   </p>
 </details>
@@ -508,10 +508,10 @@ snapshots["Baseline-status renders upvote button when developer signals are pres
   </p>
   <p>
     <a
-      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml"
+      href="https://github.com/web-platform-dx/web-features/blob/main/features/.yml.dist"
       target="_top"
     >
-      Learn more
+      Compatibility data
     </a>
   </p>
 </details>
