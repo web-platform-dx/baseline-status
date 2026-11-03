@@ -261,4 +261,40 @@ describe('Baseline-status', () => {
     const el = await fixture(html`<baseline-status featureId="grid"></baseline-status>`);
     await expect(el).shadowDom.to.equalSnapshot();
   })
+
+  it('uses _top as the default link target', async () => {
+    window.fetch = async () => ({
+      ok: true,
+      status: 200,
+      json: () => ({
+        "name": "grid",
+        "feature_id": "grid",
+        "baseline": { "status": "widely" },
+        "developer_signals": { "link": "https://example.com/upvote", "upvotes": 42 }
+      })
+    });
+    const el = await fixture(html`<baseline-status featureId="grid"></baseline-status>`);
+    await waitUntil(() => el.shadowRoot.querySelectorAll('a').length === 2);
+    el.shadowRoot.querySelectorAll('a').forEach((a) => {
+      expect(a.getAttribute('target')).to.equal('_top');
+    });
+  })
+
+  it('applies target="_blank" to all links', async () => {
+    window.fetch = async () => ({
+      ok: true,
+      status: 200,
+      json: () => ({
+        "name": "grid",
+        "feature_id": "grid",
+        "baseline": { "status": "widely" },
+        "developer_signals": { "link": "https://example.com/upvote", "upvotes": 42 }
+      })
+    });
+    const el = await fixture(html`<baseline-status featureId="grid" target="_blank"></baseline-status>`);
+    await waitUntil(() => el.shadowRoot.querySelectorAll('a').length === 2);
+    el.shadowRoot.querySelectorAll('a').forEach((a) => {
+      expect(a.getAttribute('target')).to.equal('_blank');
+    });
+  })
 });

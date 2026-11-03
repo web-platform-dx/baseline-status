@@ -218,6 +218,12 @@ export class BaselineStatus extends LitElement {
        */
       featureId: { type: String },
       feature_id: { type: String, attribute: 'feature-id' },
+      /**
+       * Link target for the widget's links,
+       * e.g. _blank. Defaults to _top.
+       * @type {string}
+       */
+      target: { type: String },
     };
   }
 
@@ -321,7 +327,9 @@ export class BaselineStatus extends LitElement {
 
     const { link: upvoteUrl, upvotes } = feature.developer_signals || {};
 
-    const upvoteButton = upvoteUrl ? html`<a class="signals-badge" href="${upvoteUrl}" target="_top" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : '';
+    const target = this.target || '_top';
+
+    const upvoteButton = upvoteUrl ? html`<a class="signals-badge" href="${upvoteUrl}" target="${target}" @click="${(e) => e.stopPropagation()}" title="${upvotes} developer upvote${upvotes == 1 ? '' : 's'}. Need this feature across browsers? Click this and upvote it on GitHub.">👍 ${upvotes || 0}</a>` : '';
 
     const getAriaLabel = (
       title,
@@ -375,7 +383,7 @@ export class BaselineStatus extends LitElement {
         ${description}
       </p>
       <p>
-        ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml.dist" target="_top">Compatibility data</a>`}
+        ${baseline === 'no_data' ? '' : html`<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml.dist" target="${target}">Compatibility data</a>`}
       </p>
     </details>`;
   }

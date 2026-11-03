@@ -13,6 +13,17 @@ Show Baseline status widget for
 ```
 <baseline-status featureId="anchor-positioning"></baseline-status>
 ```
+
+## Options
+
+By default, links in the widget open in the top-level browsing context
+(`target="_top"`). To open them elsewhere, e.g. in a new tab, set the
+`target` attribute:
+
+```
+<baseline-status featureId="anchor-positioning" target="_blank"></baseline-status>
+```
+
 ## Data source
 
 The widget fetches data from the Web Features API endpoint: `https://api.webstatus.dev/v1/features/` which exposes data from the [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/) project.
