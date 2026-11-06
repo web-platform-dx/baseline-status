@@ -1,0 +1,77 @@
+name: Publish to npm via OSS Exit Gate
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Authenticate to Google Cloud for OSS Exit Gate
+        id: auth
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          token_format: 'access_token'
+          workload_identity_provider: 'projects/305452601764/locations/global/workloadIdentityPools/builders/providers/github'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3
+
+      - name: Clean up stale releases from staging repo
+        run: |
+          # clean up stale releases from staging repo
+          packages=$(gcloud artifacts packages list \
+              --project="oss-exit-gate-prod" \
+              --location="us" \
+              --repository="baseline-status--npm" \
+              --format="value(name)" 2>/dev/null)
+
+          echo "${packages}" | xargs -r -I {} sh -c '
+              package_name=$(basename "{}")
+              echo "Deleting package: $package_name..."
+              gcloud artifacts packages delete "{}" \
+                  --project="oss-exit-gate-prod" \
+                  --location="us" \
+                  --repository="baseline-status--npm" \
+                  --quiet
+          '
+
+      - name: Stage to Artifact Registry and trigger OSS Exit Gate
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          cat << 'NPMRC' > "$HOME/.npmrc"
+          registry=https://us-npm.pkg.dev/oss-exit-gate-prod/baseline-status--npm/
+          //us-npm.pkg.dev/oss-exit-gate-prod/baseline-status--npm/:always-auth=true
+          //us-npm.pkg.dev/oss-exit-gate-prod/baseline-status--npm/:_authToken=${ACCESS_TOKEN}
+          NPMRC
+          trap 'rm -f "$HOME/.npmrc"' EXIT
+          npm publish --access public --registry="https://us-npm.pkg.dev/oss-exit-gate-prod/baseline-status--npm/"
+          cat << 'MANIFEST' > manifest.json
+          {
+            "publish_all": true
+          }
+          MANIFEST
+          gcloud storage cp manifest.json "gs://oss-exit-gate-prod-projects-bucket/baseline-status/npm/manifests/manifest-${RUN_ID}-${RUN_ATTEMPT}.json"
